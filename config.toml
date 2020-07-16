@@ -4,20 +4,23 @@ title = "Ampersand Softworks"
 enableInlineShortcodes = true
 
 theme = "soho"
-summarylength = 10
+summarylength = 20
 enableEmoji = true
 
 [params]
 author = "brett ohland"
-description = "A dev blog for iOS/Mac/Keyboards"
+description = "A development blog for pocket computer software and DIY keyboards"
 
-gravatar = "hello@brettohland.com"
+#gravatar = "hello@brettohland.com"
+profilePicture = "images/headshot.jpg"
 
 copyright = "brett ohland"
 license = "CC BY-SA 4.0"
 licenseURL = "https://creativecommons.org/licenses/by-sa/4.0"
 
-themeColor = "#FF3D7F"
+themeColor = "#FF1A87"
+
+customCss = ["css/custom.css"]
 
   ## Set as many as you want.
   [[params.socialIcons]]
@@ -29,6 +32,11 @@ themeColor = "#FF3D7F"
   icon = "fa-github"
   title = "GitHub"
   url = "https://github.com/brettohland"
+
+  [[params.socialIcons]]
+  icon = "fa-instagram"
+  title = "Instagram"
+  url = "https://instagram.com/bretto"
 
 [menu]
 
@@ -45,8 +53,6 @@ themeColor = "#FF3D7F"
   url = "/about/"
 
 [taxonomies]
-  category = "categories"
-  series = "series"
   tag = "tags"
 
 [markup]

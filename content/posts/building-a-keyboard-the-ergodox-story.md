@@ -1,7 +1,8 @@
 ---
-title: "Building a Keyboard (My Ergodox Story)"
+title: "Building an Ergodox"
 date: 2015-08-14T10:57:59-06:00
-draft: true
+draft: false
+tags: ["Keyboards", "ErgoDox", "DIY"]
 ---
 
 <small>(Or, how I made my life really complicated for a little while.)</small>
