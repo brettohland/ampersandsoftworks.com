@@ -50,7 +50,7 @@ Everything is contained inside one view controller.
 
 ## Imports + Interface + Implementation stuff
 
-```
+``` Objective-C
 @import MultipeerConnectivity;
 
 static NSString * const HotColdServiceType = @"hotcold-service";
@@ -87,7 +87,7 @@ One private variable is an NSNumber of the button counter. It's the value we'll 
 
 
 ## viewDidLoad
-```
+```  Objective-C
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -122,7 +122,7 @@ We're ready to get this show on the road.
 
 ## viewWillAppear
 
-```
+```  Objective-C
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
@@ -137,7 +137,7 @@ We set our display name on the label and start both browsing and advertising. Fr
 
 ## MCNearbyServiceAdvertiserDelegates
 
-```
+```  Objective-C
 -(void)advertiser:(MCNearbyServiceAdvertiser *)advertiser didReceiveInvitationFromPeer:(MCPeerID *)peerID
       withContext:(NSData *)context
 invitationHandler:(void (^)(BOOL, MCSession *))invitationHandler {
@@ -172,8 +172,7 @@ After setting the delegate for the session to self, we then have to call the han
 
 ## MCNearbyServiceBrowserDelegates
 
-```
-
+```  Objective-C
 -(void)browser:(MCNearbyServiceBrowser *)browser foundPeer:(MCPeerID *)peerID withDiscoveryInfo:(NSDictionary *)info {
     NSLog(@"FOUND PEER %@", peerID.displayName);
     
@@ -206,7 +205,7 @@ On the browsing side, we're simply looking for any advertised services, inviting
 
 Now, if we lose the peer after finding it, we're simply restarting the advertising and browsing services.
 
-```
+```  Objective-C
 # pragma mark - MCSessionDelegate
 
 -(void)session:(MCSession *)session didReceiveData:(NSData *)data fromPeer:(MCPeerID *)peerID {
@@ -253,7 +252,6 @@ Now, if we lose the peer after finding it, we're simply restarting the advertisi
     }
 }
 ```
-
 The two important delegate events are didReceiveData and didChangeState.
 
 didReceiveData is simply called when some data is returned from your peer, It's sent as NSData, so you have to change it back to a NSString.
@@ -266,7 +264,7 @@ I'm enabling the button and setting the peer label on the main queue once we're 
 
 
 ## 'Press This' Button Action
-```
+```  Objective-C
 - (IBAction)incrementCounterAndSend:(UIButton *)sender {
     buttonCounter = @([buttonCounter intValue] + 1);
     NSString *message = [NSString stringWithFormat:@"%d times", [buttonCounter integerValue]];

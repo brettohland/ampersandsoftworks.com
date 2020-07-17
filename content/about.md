@@ -11,7 +11,7 @@ I [wrote a book about Xcode](https://duckduckgo.com/?q=brett+ohland+Xcode+7+esse
 
 I like tabletop RPGs, building [mechanical keyboards](/tags/keyboards/), [baking bread](https://kensartisan.com/flour-water-salt-yeast/), and generally [building things](/tags/diy/).
 
-In a previous life, [I made Flash websites](https://web.archive.org/web/20031227141335/http://members.shaw.ca/diskbrake/).
+In a previous life, [I made Flash websites](http://web.archive.org/web/20040602230813/http://www.insertcoinmedia.com/seven.html).
 
 My [first app](https://github.com/brettohland/dbldbl) was named after a Tim Hortons beverage.
 
