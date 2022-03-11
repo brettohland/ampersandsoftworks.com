@@ -1,7 +1,7 @@
 ---
 title: "Handwired Microkeyboard"
 date: 2020-07-16T20:23:16-06:00
-draft: false
+draft: true
 tags: ["DIY", "Keyboards"]
 ---
 

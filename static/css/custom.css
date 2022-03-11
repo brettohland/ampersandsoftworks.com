@@ -271,4 +271,8 @@ code {
   footer {
     padding-left: 18rem;
   }
+
+  main.content {
+    max-width: 60rem;
+  }
 }
