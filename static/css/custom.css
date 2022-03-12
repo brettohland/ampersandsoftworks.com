@@ -272,7 +272,7 @@ code {
     padding-left: 18rem;
   }
 
-  main.content {
+  html body main.content {
     max-width: 60rem;
   }
 }

@@ -12,11 +12,11 @@ This post is going to dive into how to use the new `.formatted()` methods on the
 TL;DR: [Here's a gist with everything](https://gist.github.com/brettohland/84f03e32fa2d327c10ca2944d7d92d5c)
 
 ## Basic Usage (`.formatted()`)
-By calling `.formatted()` without an explicit `FormatStyle`, Swift will simply use a system default chosen by Apple to represent the most common use case. 
+Many of the internal value types have had a `.formatted()` method added to them. When called, the system will use a sensible default to display your data using your device's current Locale, Calendar and Language.
 
 ```Swift
 // Dates
-Date(timeIntervalSinceReferenceDate: 0).formatted()                // "12/31/2000, 5:00 PM"
+Date(timeIntervalSinceReferenceDate: 0).formatted() // "12/31/2000, 5:00 PM"
 
 // Measurements
 Measurement(value: 20, unit: UnitDuration.minutes).formatted()     // "20 min"
@@ -37,13 +37,17 @@ PersonNameComponents(givenName: "Johnny", familyName: "Appleseed").formatted() /
 // Lists
 ["Alba", "Bruce", "Carol", "Billson"].formatted() // "Alba, Bruce, Carol, and Billson"
 
+// TimeInterval
+let referenceDay = Date(timeIntervalSinceReferenceDate: 0)
+(referenceDay ..< referenceDay.addingTimeInterval(200)).formatted() // "12/31/00, 5:00 – 5:03 PM"
+
 ```
 
 You can see the variations that Apple provides to us. But we're going to focus solely on Date formatting in this post.
 
-According to Apple, the implementation under the hood still uses the various `Formatter` subclasses, but now the system handles the caching for us. Thankfully, this complexity is behind us.
+[According to Apple](https://forums.swift.org/t/how-to-use-the-new-formatstyle-to-format-an-int-to-hex/51176/5), the implementation under the hood still uses the various `Formatter` subclasses, but now the system handles the caching for us. Our long nightmare is over.
 
-Something to note, by default, the various formatters use the device's current Locale and Language to display all of its values. There are ways to set a fixed locale, but it differs for each type that conforms to `FormatStyle`.
+Something to note, by default, the various formatters use the device's current Locale and Language to display all of its values. You are able to set a fixed Locale and Calendar
 
 ## Advanced Usage
 
@@ -55,7 +59,7 @@ By calling `.formatted(_ :)` and including an appropriate value that conforms to
 .formatted(date: Date.FormatStyle.DateStyle, time: Date.FormatStyle.TimeStyle)
 ```
 
-**DateStyle**
+**DateStyle** ([Apple Documentation](https://developer.apple.com/documentation/foundation/date/formatstyle/datestyle))
 
 - `.abbreviated` Displays the shortened localized month, day, and year: `"Feb 22, 2022"`
 - `.complete` Displays the long form of the localized day of the week, the month, the numerical day, and year: `"Tuesday, February 22, 2022"`
@@ -63,7 +67,7 @@ By calling `.formatted(_ :)` and including an appropriate value that conforms to
 - `.numeric` Displays the numeric month, numeric day, and numeric year: `"2/22/2022"`
 - `.omitted` Omits from display
 
-**TimeStyle**
+**TimeStyle** ([Apple Documentation](https://developer.apple.com/documentation/foundation/date/formatstyle/timestyle))
 - `.complete` Displays the hour, minute, second, and time zone: `"2:22:22 AM MST"`
 - `.shortened` Displays the hour, minute, and second: `"2:22 AM"`
 - `.standard` Displays the hour, minute, second without the time zone: `"2:22:22 AM"`
@@ -82,15 +86,29 @@ let twosdayDateComponents = DateComponents(
 let twosday = Calendar(identifier: .gregorian).date(from: twosdayDateComponents)!
 
 // MARK: DateStyle
-twosday.formatted(date: .abbreviated, time: .omitted) // "Feb 22, 2022"
-twosday.formatted(date: .complete, time: .omitted)    // "Tuesday, February 22, 2022"
-twosday.formatted(date: .long, time: .omitted)        // "February 22, 2022"
-twosday.formatted(date: .numeric, time: .omitted)     // "2/22/2022"
+twosday.formatted(date: .abbreviated, time: .omitted)   // "Feb 22, 2022"
+twosday.formatted(date: .complete, time: .omitted)      // "Tuesday, February 22, 2022"
+twosday.formatted(date: .long, time: .omitted)          // "February 22, 2022"
+twosday.formatted(date: .numeric, time: .omitted)       // "2/22/2022"
 
 // MARK: TimeStyle
-twosday.formatted(date: .omitted, time: .complete)    // "2:22:22 AM MST"
-twosday.formatted(date: .omitted, time: .shortened)   // "2:22 AM"
-twosday.formatted(date: .omitted, time: .standard)    // "2:22:22 AM"
+twosday.formatted(date: .omitted, time: .complete)      // "2:22:22 AM MST"
+twosday.formatted(date: .omitted, time: .shortened)     // "2:22 AM"
+twosday.formatted(date: .omitted, time: .standard)      // "2:22:22 AM"
+
+// MARK: - DateStyle & TimeStyle
+twosday.formatted(date: .abbreviated, time: .complete)  // "Feb 22, 2022, 2:22:22 AM MST"
+twosday.formatted(date: .abbreviated, time: .shortened) // "Feb 22, 2022, 2:22 AM"
+twosday.formatted(date: .abbreviated, time: .standard)  // "Feb 22, 2022, 2:22:22 AM"
+twosday.formatted(date: .complete, time: .complete)     // "Tuesday, February 22, 2022, 2:22:22 AM MST"
+twosday.formatted(date: .complete, time: .shortened)    // "Tuesday, February 22, 2022, 2:22 AM"
+twosday.formatted(date: .complete, time: .standard)     // "Tuesday, February 22, 2022, 2:22:22 AM"
+twosday.formatted(date: .long, time: .complete)         // "February 22, 2022, 2:22:22 AM MST"
+twosday.formatted(date: .long, time: .shortened)        // "February 22, 2022, 2:22 AM"
+twosday.formatted(date: .long, time: .standard)         // "February 22, 2022, 2:22:22 AM"
+twosday.formatted(date: .numeric, time: .complete)      // "2/22/2022, 2:22:22 AM MST"
+twosday.formatted(date: .numeric, time: .shortened)     // "2/22/2022, 2:22 AM"
+twosday.formatted(date: .numeric, time: .standard)      // "2/22/2022, 2:22:22 AM"
 ```
 
 Of course, you can mix and match these values however you'd like as the method requires you to include both the `date` and `time` values.
@@ -98,6 +116,7 @@ Of course, you can mix and match these values however you'd like as the method r
 ``` Swift
 .formatted(_: Date.FormatStyle)
 ```
+([Apple Documentation](https://developer.apple.com/documentation/foundation/date/formatstyle))
 
 The `Date.FormatStyle` struct has a `.dateTime` property. This can be composited in a way that allows for the creation of complex date strings with little work. You simply include within the formatted method a list of components you would like to include in the final string. **The order of these components does not matter**
 
@@ -164,6 +183,8 @@ twosday.formatted(.dateTime.second().minute().hour().day().month().year()) // "F
 (You can see how the order of the components does not affect the final string)
 
 You can _further specify_ the formatting styling for each of these components with specified `Symbol` types.
+
+([Apple Documentation](https://developer.apple.com/documentation/foundation/date/formatstyle/symbol))
 
 - `Date.FormatStyle.Symbol.CyclicYear`
 - `Date.FormatStyle.Symbol.Day`
