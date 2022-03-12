@@ -261,11 +261,11 @@ For example, why not make the most useless formatter ever imagined that displays
 
 ``` Swift
 /// Returns the date in the most useless way ever
-struct ReversedDateFormat: FormatStyle {
-    typealias FormatInput = Date
-    typealias FormatOutput = String
+struct ReversedDateFormat: FormatStyle { // 1 
+    typealias FormatInput = Date // 2
+    typealias FormatOutput = String // 3
 
-    func format(_ value: Date) -> String {
+    func format(_ value: Date) -> String { // 4
         "\(value.formatted(.dateTime.second())):" +
         "\(value.formatted(.dateTime.minute())):" +
         "\(value.formatted(.dateTime.hour())) " +
