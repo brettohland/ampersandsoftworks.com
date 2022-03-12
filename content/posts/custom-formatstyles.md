@@ -2,12 +2,18 @@
 title: "Custom FormatStyle"
 date: 2022-03-12T08:09:30-07:00
 draft: false
-tags: [ios15, formatstyle]
+tags: [ios15, formatstyle, deepdive]
 ---
+
+[This is part of the FormatStyle Deep Dive series](/posts/formatstyle-deep-dive)
 
 Using the built in implementations of FormatStyle provided by Apple can get you a long way. In fact, [checking the Apple Docs](https://developer.apple.com/documentation/foundation/formatstyle) provides a full list of them. You can format numbers, currency, percentages, dates, bytes, measurements, and even relative dates.
 
 But if you're in a position where you'd like to add your own formatting styles (for whatever reason), you have the ability to do just that by creating your own `FormatStyle` struct.
+
+[Download the Xcode Playground with all examples](https://github.com/brettohland/FormatStylesDeepDive/)
+
+[See the examples as a gist](https://gist.github.com/brettohland/0bafc12c89143d5e493e349341b31e9e#file-custom-formatstyle-swift)
 
 For example, you could create a simple way to display any Integer as Yen using Swift's Decimal Currency features:
 
@@ -50,4 +56,4 @@ extension FormatStyle where Self == ToYen {
 
 Easy.
 
-Also. Don't use `Float` or `Double` types to store currency. Their imprecision is going to lead you to be very sad.
+Also. Don't use `Float` or `Double` types to store currency or initialize a Decimal. Their imprecision is going to lead you to be very sad.

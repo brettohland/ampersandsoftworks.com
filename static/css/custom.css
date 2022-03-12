@@ -276,3 +276,7 @@ code {
     max-width: 60rem;
   }
 }
+
+pre {
+	border-radius: 0.5em;
+}

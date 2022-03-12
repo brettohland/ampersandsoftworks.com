@@ -2,58 +2,166 @@
 title: "Date & FormatStyle & You"
 date: 2022-03-11T06:53:13-07:00
 draft: false
-tags: [formatters, ios15, deepdive]
+tags: [ios15, formatstyle, deepdive]
 ---
 
-Apple introduced the new `FormatStyle` protocol with iOS 15. It allows for some truly remarkable things to happen when you're converting your data into strings. In true Apple fashion though, details about how to use these new features are lightly documented with few examples.
+[This is part of the FormatStyle Deep Dive series](/posts/formatstyle-deep-dive)
 
-This post is going to dive into how to use the new `.formatted()` methods on the `Date` object and how its simplified interface hides some exciting complexity.
+Correctly displaying localized string values of dates is something that every developer needs. To do this correctly is incredibly complex, and thankfully Apple gives us a very powerful set of tools to do this correctly.
 
-TL;DR: [Here's a gist with everything](https://gist.github.com/brettohland/84f03e32fa2d327c10ca2944d7d92d5c)
+[Download the Xcode Playground with all examples](https://github.com/brettohland/FormatStylesDeepDive/)
 
-## Basic Usage (`.formatted()`)
-Many of the internal value types have had a `.formatted()` method added to them. When called, the system will use a sensible default to display your data using your device's current Locale, Calendar and Language.
+[See the examples as a gist](https://gist.github.com/brettohland/0bafc12c89143d5e493e349341b31e9e#file-date-formatting-swift)
+
+Jump to each section:
+
+- [`.formatted()`](#the-basics)
+- [`.formatted(.dateStyle)`](#compositing-using-datetime)
+- [`.formatted(date: time:)`](#datestyle--timestyle)
+- [`.formatted(.relative)`](#relative-dates)
+- [`.formatted(Date.FormatStyle)`](#custom-dateformatstyle)
+- [`Text(_: format:) // SwiftUI`](#swiftui)
+
+<hr>
+
+# The Basics
+
+Simply calling `.formatted()` on a Date object will give you a simple and easy to read string:
 
 ```Swift
-// Dates
-Date(timeIntervalSinceReferenceDate: 0).formatted() // "12/31/2000, 5:00 PM"
+twosday.formatted() // "2/22/2022, 2:22 AM"
+``` 
 
-// Measurements
-Measurement(value: 20, unit: UnitDuration.minutes).formatted()     // "20 min"
-Measurement(value: 300, unit: UnitLength.miles).formatted()        // "300 mi"
-Measurement(value: 10, unit: UnitMass.kilograms).formatted()       // "22 lb"
-Measurement(value: 100, unit: UnitTemperature.celsius).formatted() // "212°F"
+This is great for simple use cases, and debugging.
 
-// Numbers
-32.formatted()               // "32"
-Decimal(20.0).formatted()    // "20"
-Float(10.0).formatted()      // "10"
-Int(2).formatted()           // "2"
-Double(100.0003).formatted() // "100.0003"
+<hr>
 
-// Names
-PersonNameComponents(givenName: "Johnny", familyName: "Appleseed").formatted() // "Johnny Appleseed"
+# Advanced Usage
 
-// Lists
-["Alba", "Bruce", "Carol", "Billson"].formatted() // "Alba, Bruce, Carol, and Billson"
+## Compositing Using `.dateTime()`
 
-// TimeInterval
-let referenceDay = Date(timeIntervalSinceReferenceDate: 0)
-(referenceDay ..< referenceDay.addingTimeInterval(200)).formatted() // "12/31/00, 5:00 – 5:03 PM"
+([Apple Documentation](https://developer.apple.com/documentation/foundation/date/formatstyle))
 
+Apple provides the `Date.FormatStyle.dateTime()` FormatStyle to allow us to mix and match the individual components we want to display in our final localized string. Each of these components can further customized to allow you to fine-tune every aspect of your display string.
+
+The available components are:
+
+- `.day()` The numerical day of the month
+- `.dayOfYear()` The numerical day of the year
+- `.era()` The era (AD/BC in the gregorian calendar for example)
+- `.hour()` The numerical hour
+- `.minute()` The numerical minute
+- `.month()` The month as a string
+- `.quarter()` The quarter
+- `.second()` The Numerical second
+- `.timeZone()` The time zone
+- `.week()` The numerical week of the month
+- `.weekday()`The weekday as a string
+- `.year()` The numerical year
+
+> Note: I'm calling these "components", but in reality each of these are individual methods that return a `Date.FormatStyle`. You can further customize them (that's discussed below)
+
+```Swift 
+let twosdayDateComponents = DateComponents(
+    year: 2022,
+    month: 2,
+    day: 22,
+    hour: 2,
+    minute: 22,
+    second: 22,
+    nanosecond: 22
+)
+
+let twosday = Calendar(identifier: .gregorian).date(from: twosdayDateComponents)!
+
+twosday.formatted(.dateTime.day())       // "22"
+twosday.formatted(.dateTime.dayOfYear()) // "53"
+twosday.formatted(.dateTime.era())       // "AD"
+twosday.formatted(.dateTime.hour())      // "2 AM"
+twosday.formatted(.dateTime.minute())    // "22"
+twosday.formatted(.dateTime.month())     // "Feb"
+twosday.formatted(.dateTime.quarter())   // "Q1"
+twosday.formatted(.dateTime.second())    // "22"
+twosday.formatted(.dateTime.timeZone())  // "MST"
+twosday.formatted(.dateTime.week())      // "9"
+twosday.formatted(.dateTime.weekday())   // "Tue"
+twosday.formatted(.dateTime.year())      // "2022"
 ```
 
-You can see the variations that Apple provides to us. But we're going to focus solely on Date formatting in this post.
+It's usage is simple, but verbose. Call the formatted method on the Date and pass in the `dateTime` style with a chain of units you'd like to include.
 
-[According to Apple](https://forums.swift.org/t/how-to-use-the-new-formatstyle-to-format-an-int-to-hex/51176/5), the implementation under the hood still uses the various `Formatter` subclasses, but now the system handles the caching for us. Our long nightmare is over.
+```Swift
+let twosdayDateComponents = DateComponents(
+    year: 2022,
+    month: 2,
+    day: 22,
+    hour: 2,
+    minute: 22,
+    second: 22,
+    nanosecond: 22
+)
 
-Something to note, by default, the various formatters use the device's current Locale and Language to display all of its values. You are able to set a fixed Locale and Calendar
+let twosday = Calendar(identifier: .gregorian).date(from: twosdayDateComponents)!
 
-## Advanced Usage
+twosday.formatted(.dateTime.year().month().day().hour().minute().second()) // "Feb 22, 2022, 2:22:22 AM"
+twosday.formatted(.dateTime.second().minute().hour().day().month().year()) // "Feb 22, 2022, 2:22:22 AM"
+```
 
-By calling `.formatted(_ :)` and including an appropriate value that conforms to the `FormatStyle` protocol, we can customize the display of our data in our UI. 
+> Note: As you can see, the order of the components doesn't matter. The system will display them in the correct way for your device's Locale and Calendar.
 
-`Date` types have a unique convenience method that lets you set the `Date.FormatStyle.DateStyle` and `Date.FormatStyle.TimeStyle` on the formatter.
+### Customizing Individual Components
+
+Each component can be customized by passing in a `Symbol` into each individual component method. You can use them to further customize the component and build out the perfect string. There's a lot of them, so I'll just link to the docs if you're curious.
+
+([Apple Documentation](https://developer.apple.com/documentation/foundation/date/formatstyle/symbol))
+
+- `Date.FormatStyle.Symbol.CyclicYear`
+- `Date.FormatStyle.Symbol.Day`
+- `Date.FormatStyle.Symbol.DayOfYear`
+- `Date.FormatStyle.Symbol.DayPeriod`
+- `Date.FormatStyle.Symbol.Era`
+- `Date.FormatStyle.Symbol.Hour`
+- `Date.FormatStyle.Symbol.Minute`
+- `Date.FormatStyle.Symbol.Month`
+- `Date.FormatStyle.Symbol.Quarter`
+- `Date.FormatStyle.Symbol.Second`
+- `Date.FormatStyle.Symbol.SecondFraction`
+- `Date.FormatStyle.Symbol.StandaloneMonth`
+- `Date.FormatStyle.Symbol.StandaloneQuarter`
+- `Date.FormatStyle.Symbol.StandaloneWeekday`
+- `Date.FormatStyle.Symbol.TimeZone`
+- `Date.FormatStyle.Symbol.VerbatimHour`
+- `Date.FormatStyle.Symbol.Week`
+- `Date.FormatStyle.Symbol.Weekday`
+- `Date.FormatStyle.Symbol.Year`
+- `Date.FormatStyle.Symbol.YearForWeekOfYear`
+
+Putting it all together:
+
+```Swift
+let twosdayDateComponents = DateComponents(
+    year: 2022,
+    month: 2,
+    day: 22,
+    hour: 2,
+    minute: 22,
+    second: 22,
+    nanosecond: 22
+)
+let twosday = Calendar(identifier: .gregorian).date(from: twosdayDateComponents)!
+
+twosday.formatted(.dateTime.day(.twoDigits))           // "22"
+twosday.formatted(.dateTime.day(.ordinalOfDayInMonth)) // "4"
+twosday.formatted(.dateTime.day(.defaultDigits))       // "22"
+```
+
+The power of this cannot be overstated. While it is verbose, this allows for you to specify exactly the string representation of the date you would like to an almost ludicrous degree. 
+
+<hr>
+
+## DateStyle & TimeStyle
+
+If you're not needing the granularity of the `.dateTime` style, you can quickly set the time and date styles using a convenience method on Date object.
 
 ``` Swift
 .formatted(date: Date.FormatStyle.DateStyle, time: Date.FormatStyle.TimeStyle)
@@ -61,17 +169,19 @@ By calling `.formatted(_ :)` and including an appropriate value that conforms to
 
 **DateStyle** ([Apple Documentation](https://developer.apple.com/documentation/foundation/date/formatstyle/datestyle))
 
-- `.abbreviated` Displays the shortened localized month, day, and year: `"Feb 22, 2022"`
-- `.complete` Displays the long form of the localized day of the week, the month, the numerical day, and year: `"Tuesday, February 22, 2022"`
-- `.long` Displays the full length month, day, and year: `"February 22, 2022"`
-- `.numeric` Displays the numeric month, numeric day, and numeric year: `"2/22/2022"`
+- `.abbreviated` Abbreviates the month: `"Feb 22, 2022"`
+- `.complete` Includes the long form of the weekday: `"Tuesday, February 22, 2022"`
+- `.long`: Full month, omits weekday: `"February 22, 2022"`
+- `.numeric` Numbers only `"2/22/2022"`
 - `.omitted` Omits from display
 
 **TimeStyle** ([Apple Documentation](https://developer.apple.com/documentation/foundation/date/formatstyle/timestyle))
-- `.complete` Displays the hour, minute, second, and time zone: `"2:22:22 AM MST"`
-- `.shortened` Displays the hour, minute, and second: `"2:22 AM"`
-- `.standard` Displays the hour, minute, second without the time zone: `"2:22:22 AM"`
+- `.complete` The complete time with time zone: `"2:22:22 AM MST"`
+- `.shortened` Hours and minutes only: `"2:22 AM"`
+- `.standard` Hours, minutes, seconds, no time zone: `"2:22:22 AM"`
 - `.omitted` Omits from display
+
+You can mix and match the DateStyle and TimeStyle in any way that you'd like:
 
 ```Swift
 let twosdayDateComponents = DateComponents(
@@ -111,58 +221,21 @@ twosday.formatted(date: .numeric, time: .shortened)     // "2/22/2022, 2:22 AM"
 twosday.formatted(date: .numeric, time: .standard)      // "2/22/2022, 2:22:22 AM"
 ```
 
-Of course, you can mix and match these values however you'd like as the method requires you to include both the `date` and `time` values.
+<hr>
 
-``` Swift
-.formatted(_: Date.FormatStyle)
-```
-([Apple Documentation](https://developer.apple.com/documentation/foundation/date/formatstyle))
+## Relative Dates
 
-The `Date.FormatStyle` struct has a `.dateTime` property. This can be composited in a way that allows for the creation of complex date strings with little work. You simply include within the formatted method a list of components you would like to include in the final string. **The order of these components does not matter**
+You can use the `.relative` format style if you'd like to show the distance between two dates. As this is using the `RelativeFormatStyle` and not the `DateFormatStyle`, I've written it in a separate post.
 
-Each of the date components are available to you to display:
+[Using RelativeDateStyle](/posts/formstyle-relative-dates)
 
-- `.day()`
-- `.dayOfYear()`
-- `.era()`
-- `.hour()`
-- `.minute()`
-- `.month()`
-- `.quarter()`
-- `.second()`
-- `.timeZone()`
-- `.week()`
-- `.weekday()`
-- `.year()`
+<hr>
 
-```Swift 
-let twosdayDateComponents = DateComponents(
-    year: 2022,
-    month: 2,
-    day: 22,
-    hour: 2,
-    minute: 22,
-    second: 22,
-    nanosecond: 22
-)
+## Custom `Date.FormatStyle` & `FormatStyle`
 
-let twosday = Calendar(identifier: .gregorian).date(from: twosdayDateComponents)!
+If you're needing to set the calendar, locale, time zone, or capitalization style of your string you'll need to create a new `Date.FormatStyle` value. 
 
-twosday.formatted(.dateTime.day())       // "22"
-twosday.formatted(.dateTime.dayOfYear()) // "53"
-twosday.formatted(.dateTime.era())       // "AD"
-twosday.formatted(.dateTime.hour())      // "2 AM"
-twosday.formatted(.dateTime.minute())    // "22"
-twosday.formatted(.dateTime.month())     // "Feb"
-twosday.formatted(.dateTime.quarter())   // "Q1"
-twosday.formatted(.dateTime.second())    // "22"
-twosday.formatted(.dateTime.timeZone())  // "MST"
-twosday.formatted(.dateTime.week())      // "9"
-twosday.formatted(.dateTime.weekday())   // "Tue"
-twosday.formatted(.dateTime.year())      // "2022"
-```
-
-You can then use these components to composite the exact string that you'd like convert to:
+One of the unfortunate limitations is that you're limited to [the DateStyle and TimeStyle options](d#atestyle--timestyle) and not the full compositing ability of the `.dateTime` style.
 
 ```Swift
 let twosdayDateComponents = DateComponents(
@@ -174,90 +247,24 @@ let twosdayDateComponents = DateComponents(
     second: 22,
     nanosecond: 22
 )
-
-let twosday = Calendar(identifier: .gregorian).date(from: twosdayDateComponents)!
-
-twosday.formatted(.dateTime.year().month().day().hour().minute().second()) // "Feb 22, 2022, 2:22:22 AM"
-twosday.formatted(.dateTime.second().minute().hour().day().month().year()) // "Feb 22, 2022, 2:22:22 AM"
-```
-(You can see how the order of the components does not affect the final string)
-
-You can _further specify_ the formatting styling for each of these components with specified `Symbol` types.
-
-([Apple Documentation](https://developer.apple.com/documentation/foundation/date/formatstyle/symbol))
-
-- `Date.FormatStyle.Symbol.CyclicYear`
-- `Date.FormatStyle.Symbol.Day`
-- `Date.FormatStyle.Symbol.DayOfYear`
-- `Date.FormatStyle.Symbol.DayPeriod`
-- `Date.FormatStyle.Symbol.Era`
-- `Date.FormatStyle.Symbol.Hour`
-- `Date.FormatStyle.Symbol.Minute`
-- `Date.FormatStyle.Symbol.Month`
-- `Date.FormatStyle.Symbol.Quarter`
-- `Date.FormatStyle.Symbol.Second`
-- `Date.FormatStyle.Symbol.SecondFraction`
-- `Date.FormatStyle.Symbol.StandaloneMonth`
-- `Date.FormatStyle.Symbol.StandaloneQuarter`
-- `Date.FormatStyle.Symbol.StandaloneWeekday`
-- `Date.FormatStyle.Symbol.TimeZone`
-- `Date.FormatStyle.Symbol.VerbatimHour`
-- `Date.FormatStyle.Symbol.Week`
-- `Date.FormatStyle.Symbol.Weekday`
-- `Date.FormatStyle.Symbol.Year`
-- `Date.FormatStyle.Symbol.YearForWeekOfYear`
-
-```Swift
-let twosdayDateComponents = DateComponents(
-    year: 2022,
-    month: 2,
-    day: 22,
-    hour: 2,
-    minute: 22,
-    second: 22,
-    nanosecond: 22
-)
-let twosday = Calendar(identifier: .gregorian).date(from: twosdayDateComponents)!
-
-twosday.formatted(.dateTime.day(.twoDigits))           // "22"
-twosday.formatted(.dateTime.day(.ordinalOfDayInMonth)) // "4"
-twosday.formatted(.dateTime.day(.defaultDigits))       // "22"
-```
-
-The power of this cannot be overstated. While it is verbose, this allows for you to specify exactly the string representation of the date you would like to an almost ludicrous degree. 
-
-If you're needing to customize the locale, calendar, time zone, and capitalization context for a date, you can simply initialize a new `Date.FormatStyle` value and pass it into the `FormatStyle` parameter.
-
-Unfortunately, you are limited to the `Date.FormatStyle.DateStyle` and `Date.FormatStyle.TimeStyle` values mentioned earlier for the display:
-
-```Swift
-let twosdayDateComponents = DateComponents(
-    year: 2022,
-    month: 2,
-    day: 22,
-    hour: 2,
-    minute: 22,
-    second: 22,
-    nanosecond: 22
-)
-let twosday = Calendar(identifier: .gregorian).date(from: twosdayDateComponents)!
-let posixStyle = Date.FormatStyle(
+let frenchHebrew = Date.FormatStyle(
     date: .complete,
     time: .complete,
-    locale: Locale(identifier: "en_us_POSIX"),
-    calendar: Calendar(identifier: .chinese),
+    locale: Locale(identifier: "fr_FR"),
+    calendar: Calendar(identifier: .hebrew),
     timeZone: TimeZone(secondsFromGMT: 0)!,
     capitalizationContext: .standalone
 )
 
-twosday.formatted(posixStyle) // "Tuesday, February 22, 2022(2022), 9:22:22 AM GMT"
+twosday.formatted(frenchHebrew) // "Mardi 22 février 2022 ap. J.-C. 9:22:22 UTC"
+frenchHebrew.format(twosday) // "Mardi 22 février 2022 ap. J.-C. 9:22:22 UTC"
 ```
+
+You can either pass this new custom style into the `.formatted()` method on the date object _OR_ pass the date object into the style using the `.format()` method.
 
 ## Custom FormatStyle
 
-If, for whatever reason, you aren't happy with the sheer power that's now available to you by the various built in `Date.FormatStyle` implementations. You can even ascend to the next level and fully write your own custom FormatStyle. 
-
-For example, why not make the most useless formatter ever imagined that displays the time and date in a reverse format:
+[As outline in this post, you can go one step further and create your own custom `FormatStyle`.](/posts/custom-formatstyle)
 
 ``` Swift
 /// Returns the date in the most useless way ever
@@ -279,8 +286,7 @@ extension FormatStyle where Self == ReversedDateFormat { // 5
     static var reversedDate: ReversedDateFormat { .init() }
 }
 
-twosday.formatted(.reversedDate) // "22:22:2 AM 22 Feb 2022 "
-
+twosday.formatted(.reversedDate) // "22:22:2 AM 22 Feb 2022 " // 6
 ```
 
 1. Create a struct that conforms to the `FormatStyle` protocol
@@ -289,7 +295,9 @@ twosday.formatted(.reversedDate) // "22:22:2 AM 22 Feb 2022 "
 4. Implement the main function of the `FormatStyle` protocol, do whatever formatting or transformation you need within this method and return the output type.
 5. You can then extend the `FormatStyle` protocol with the specified custom style to allow for easier usage
 
-Remember: If it's stupid and it works, it's not stupid.
+> Remember: If it's stupid and it works, it's not stupid.
+
+<hr>
 
 # SwiftUI
 
@@ -323,3 +331,9 @@ struct ContentView: View {
 ```
 
 ![](/images/2022/Mar/text-date-formatter.png)
+
+<hr>
+
+[Download the Xcode Playground with all examples](https://github.com/brettohland/FormatStylesDeepDive/)
+
+[See the examples as a gist](https://gist.github.com/brettohland/0bafc12c89143d5e493e349341b31e9e#file-date-formatting-swift)
