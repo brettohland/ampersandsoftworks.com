@@ -13,7 +13,7 @@ But if you're in a position where you'd like to add your own formatting styles (
 
 [Download the Xcode Playground with all examples](https://github.com/brettohland/FormatStylesDeepDive/)
 
-[See the examples as a gist](https://gist.github.com/brettohland/0bafc12c89143d5e493e349341b31e9e#file-custom-formatstyle-swift)
+[See the examples as a gist](https://gist.github.com/brettohland/ac2fbd1446bc7bb64da491587b010e3c)
 
 For example, you could create a simple way to display any Integer as Yen using Swift's Decimal Currency features:
 

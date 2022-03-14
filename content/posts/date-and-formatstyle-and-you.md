@@ -21,7 +21,7 @@ Date(timeIntervalSinceReferenceDate: 0).formatted() // "12/31/2000, 5:00 PM"
 
 [Download the Xcode Playground with all examples](https://github.com/brettohland/FormatStylesDeepDive/)
 
-[See the examples as a gist](https://gist.github.com/brettohland/0bafc12c89143d5e493e349341b31e9e#file-date-formatting-swift)
+[See the examples as a gist](https://gist.github.com/brettohland/ac2fbd1446bc7bb64da491587b010e3c)
 
 <hr>
 
@@ -107,6 +107,6 @@ The only FormatStyle that isn't localized. The `Date.VerbatimFormatStyle` lets y
 
 [Download the Xcode Playground with all examples](https://github.com/brettohland/FormatStylesDeepDive/)
 
-[See the examples as a gist](https://gist.github.com/brettohland/0bafc12c89143d5e493e349341b31e9e)
+[See the examples as a gist](https://gist.github.com/brettohland/ac2fbd1446bc7bb64da491587b010e3c)
 
 <hr>

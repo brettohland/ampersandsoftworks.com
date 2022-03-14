@@ -13,7 +13,7 @@ The `ByteCountFormatStyle` allows you to output a byte count to a more easily re
 
 [Download the Xcode Playground with all examples](https://github.com/brettohland/FormatStylesDeepDive/)
 
-[See the examples as a gist](https://gist.github.com/brettohland/0bafc12c89143d5e493e349341b31e9e)
+[See the examples as a gist](https://gist.github.com/brettohland/ac2fbd1446bc7bb64da491587b010e3c)
 
 <hr>
 
@@ -89,6 +89,6 @@ terabyte.formatted(inFrench) // "931,32 Go (1 000 000 000 000 octets)
 
 [Download the Xcode Playground with all examples](https://github.com/brettohland/FormatStylesDeepDive/)
 
-[See the examples as a gist](https://gist.github.com/brettohland/0bafc12c89143d5e493e349341b31e9e)
+[See the examples as a gist](https://gist.github.com/brettohland/ac2fbd1446bc7bb64da491587b010e3c)
 
 <hr>

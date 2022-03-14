@@ -13,7 +13,7 @@ This formatter gives you a localized string representation of the how much time 
 
 [Download the Xcode Playground with all examples](https://github.com/brettohland/FormatStylesDeepDive/)
 
-[See the examples as a gist](https://gist.github.com/brettohland/0bafc12c89143d5e493e349341b31e9e)
+[See the examples as a gist](https://gist.github.com/brettohland/ac2fbd1446bc7bb64da491587b010e3c)
 
 <hr>
 
@@ -140,6 +140,6 @@ secondRange.formatted(.inFrench) // "21 ans, 1 mois, 3 semaines, 9 heures et 
 
 [Download the Xcode Playground with all examples](https://github.com/brettohland/FormatStylesDeepDive/)
 
-[See the examples as a gist](https://gist.github.com/brettohland/0bafc12c89143d5e493e349341b31e9e#file-date-formatting-swift)
+[See the examples as a gist](https://gist.github.com/brettohland/ac2fbd1446bc7bb64da491587b010e3c)
 
 <hr>
