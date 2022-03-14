@@ -1,5 +1,5 @@
 ---
-title: "Formatstyle Relative Dates"
+title: "Date.RelativeFormatStyle"
 date: 2022-03-12T09:36:33-07:00
 draft: false
 tags: [ios15, formatstyle, deepdive]
@@ -9,13 +9,13 @@ tags: [ios15, formatstyle, deepdive]
 
 Displaying relative dates in a localized fashion is fiendishly complex when you sit and think about it. Apple providing it to us developers in such a simple package is a lifeline.
 
-[Read the full deep dive on Date.DateStyle](/posts/date-and-formatstyle-and-you)
+<hr>
 
 [Download the Xcode Playground with all examples](https://github.com/brettohland/FormatStylesDeepDive/)
 
 [See the examples as a gist](https://gist.github.com/brettohland/0bafc12c89143d5e493e349341b31e9e#file-relative-dates-swift)
 
-[Apple Docs for RelativeFormatStyle](https://developer.apple.com/documentation/foundation/date/relativeformatstyle)
+<hr>
 
 ```Swift
 let thePast = Calendar(identifier: .gregorian).date(byAdding: .day, value: -14, to: Date())!
@@ -33,6 +33,13 @@ thePast.formatted(.relative(presentation: .named, unitsStyle: .abbreviated))   /
 thePast.formatted(.relative(presentation: .named, unitsStyle: .narrow))        // "2 wk. ago"
 thePast.formatted(.relative(presentation: .named, unitsStyle: .spellOut))      // "two weeks ago"
 thePast.formatted(.relative(presentation: .named, unitsStyle: .wide))          // "2 weeks ago"
+```
+
+You can set the locale in-line by using the `.locale()` call:
+
+```Swift
+let franceLocale = Locale(identifier: "fr_FR")
+thePast.formatted(.relative(presentation: .named, unitsStyle: .spellOut).locale(franceLocale)) // "il y a deux semaines"
 ```
 
 By creating an instance of `Date.RelativeFormatStyle`, you can additionally customize the locale, calendar and capitalization context of the style.
@@ -78,6 +85,10 @@ extension FormatStyle where Self == InFrench {
 thePast.formatted(.inFrench) // "Il y a deux semaines"
 ```
 
+<hr>
+
 [Download the Xcode Playground with all examples](https://github.com/brettohland/FormatStylesDeepDive/)
 
 [See the examples as a gist](https://gist.github.com/brettohland/0bafc12c89143d5e493e349341b31e9e#file-relative-dates-swift)
+
+<hr>

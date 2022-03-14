@@ -15,17 +15,20 @@ To use this functionality in the past, you would have needed to create a new ins
 
 No more. According to Apple, the system is using these formatters under the hood and they're now handling the creation and cacheing of these objects for you.
 
-[See a list of all posts in this series](/tags/formatstyle/)
-
 [Download the Xcode Playground with all examples](https://github.com/brettohland/FormatStylesDeepDive/)
 
 [See the examples as a gist](https://gist.github.com/brettohland/0bafc12c89143d5e493e349341b31e9e)
 
+<hr>
+
 In this post:
 
 - [The Basics](#the-basics)
-- [Customization Option Deep Dives](#customization-options)
-- [Custom FormatStyle`](#creating-custom-formatstyle)
+	- [Sensible Defaults](#sendible-defaults)
+- [Using System Provided Styles](#built-in-formatstyle)
+	- [Using Custom Locales](#using-custom-locales)
+	- [Using Custom Calendars](#using-custom-calendars)
+- [Creating Custom FormatStyles](#creating-custom-formatstyles)
 
 <hr>
 
@@ -39,7 +42,7 @@ You can access this new system in a few ways:
 
 ## Sensible Defaults
 
-At its most basic, to calling `.formatted()` with give you sensible default that uses your device's current locale and calendar to display the value.
+At its most basic, calling `.formatted()` will give you a sensible default that uses your device's current locale and calendar to display the value.
 
 ```Swift
 // Dates
@@ -76,26 +79,120 @@ In general, these are useful to quickly convert your values into strings.
 
 <hr>
 
-# Customization Options
+# Built-In Styles
 
 For every data type that's supported by the new system, Apple has provided ways to customize your string output in many different ways. The most granular customizations will use the device's locale and calendar, while a smaller subset will let you set them specifically.
 
 Here are the deep-dives for each of the types, and their various customization options.
 
-- [Formatting Dates](/posts/date-and-formatstyle-and-you)
-- [Formatting Relative Dates](/posts/formatstyle-relative-dates/)
+- [Dates](/posts/date-and-formatstyle-and-you)
+	- [Date.FormatStyle](/posts/date-formatstyle)
+	- [Date.ComponentsFormatStyle](/posts/date-componentformatstyle)
+	- [Date.ISO8601FormatStyle](/posts/date-iso8601formatstyle)
+	- [Date.IntervalFormatStyle](/posts/date-intervalformatstyle)
+	- [Date.RelativeFormatStyle](/posts/date-relativeformatstyle)
+	- [Date.VerbatimFormatStyle](/posts/date-verbatimformatstlye)
 - Measurements
+- Bytes
 - Lists
-- Numbers
+- Floating point numbers
+- Integers
 - Decimals
 - Names
 - Lists
 - TimeIntervals
 
+## Using Custom Locales
+
+Any object of struct that conforms to the `FormatStyle` protocol inherits the `.locale()` instance method that lets you set the locale for an individual `.formatted()` call:
+
+```Swift
+let thePast = Calendar(identifier: .gregorian).date(byAdding: .day, value: -14, to: Date())!
+
+thePast.formatted(.relative(presentation: .numeric)) // "2 weeks ago"
+
+let franceLocale = Locale(identifier: "fr_FR")
+
+thePast.formatted(.relative(presentation: .numeric).locale(franceLocale)) // "il y a 2 semaines"
+
+```
+
+## Using Custom Calendars
+
+If you're needing to set the calendar for display, you're going to need to initialize a new instance of your chosen `FormatStyle`. In all cases, the built-in styles have the ability to customize various aspects of the formatter, including the calendar.
+
+```Swift
+let twosdayDateComponents = DateComponents(
+    year: 2022,
+    month: 2,
+    day: 22,
+    hour: 2,
+    minute: 22,
+    second: 22,
+    nanosecond: 22
+)
+let twosday = Calendar(identifier: .gregorian).date(from: twosdayDateComponents)!
+
+let frenchHebrew = Date.FormatStyle(
+    date: .complete,
+    time: .complete,
+    locale: Locale(identifier: "fr_FR"),
+    calendar: Calendar(identifier: .hebrew),
+    timeZone: TimeZone(secondsFromGMT: 0)!,
+    capitalizationContext: .standalone
+)
+
+twosday.formatted(frenchHebrew) // "Mardi 22 février 2022 ap. J.-C. 9:22:22 UTC"
+frenchHebrew.format(twosday) // "Mardi 22 février 2022 ap. J.-C. 9:22:22 UTC"
+```
+
 <hr>
 
-# Creating Custom FormatStyle
+# Creating Custom FormatStyles
 
-If Apple's built-in customization options aren't up to your liking. You can create new and exciting FormatStyles to suit any and all needs.
+The `FormatStyle` protocol is very broad, it's defined as the following:
 
-[Creating Custom FormatStyles](/posts/custom-formatstyles)
+```Swift
+/// A type that can convert a given data type into a representation.
+@available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+public protocol FormatStyle : Decodable, Encodable, Hashable {
+
+    /// The type of data to format.
+    associatedtype FormatInput
+
+    /// The type of the formatted data.
+    associatedtype FormatOutput
+
+    /// Creates a `FormatOutput` instance from `value`.
+    func format(_ value: Self.FormatInput) -> Self.FormatOutput
+
+    /// If the format allows selecting a locale, returns a copy of this format with the new locale set. Default implementation returns an unmodified self.
+    func locale(_ locale: Locale) -> Self
+}
+```
+
+In practice, you define your input and output types, and implement the formatting within the `format(_ value:)` method.
+
+```Swift
+struct ToYen: FormatStyle {
+    typealias FormatInput = Int
+    typealias FormatOutput = String
+
+    func format(_ value: Int) -> String {
+        Decimal(value * 100).formatted(.currency(code: "jpy"))
+    }
+}
+
+30.formatted(ToYen()) // "¥3,000"
+```
+
+You can follow Apple's lead, and further extend the `FormatStyle` to allow you to quickly and easily call your new style:
+
+```Swift
+extension FormatStyle where Self == ToYen {
+    static var toYen: ToYen { .init() }
+}
+
+30.formatted(.toYen) // "¥3,000"
+```
+
