@@ -93,7 +93,7 @@ Here are the deep-dives for each of the types, and their various customization o
 	- [Date.RelativeFormatStyle](/posts/date-relativeformatstyle)
 	- [Date.VerbatimFormatStyle](/posts/date-verbatimformatstlye)
 - [Measurements.FormatStyle](/posts/measurement-formatstyle)
-- [Measurement.ByteCountFormatStyle](/posts/bytecountformatstyle)
+- [ByteCountFormatStyle](/posts/bytecountformatstyle)
 - Lists
 - Floating point numbers
 - Integers
