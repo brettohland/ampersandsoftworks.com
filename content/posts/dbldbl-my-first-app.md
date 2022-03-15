@@ -1,7 +1,7 @@
 ---
 title: "dbldbl - My First App"
 date: 2014-04-16T01:55:52+00:00
-draft: true
+draft: false
 tags: ["code-review"]
 ---
 
@@ -23,12 +23,12 @@ The application did pay off though, I managed to make enough money off of it tha
 
 Plus I created some really great images:
 
- {{< instagram P_SDeWsJiT >}}
+<iframe src="https://www.instagram.com/p/P_SDeWsJiT/embed/" width="666" height="600"></iframe>
 
- {{< instagram NX1GYBsJqm >}}
+<iframe src="https://www.instagram.com/p/NX1GYBsJqm/embed/" width="666" height="600"></iframe>
 
- {{< instagram akRwrxsJjN >}}
+<iframe src="https://www.instagram.com/p/akRwrxsJjN/embed/" width="666" height="600"></iframe>
 
- {{< instagram LMgIdlMJhT >}}
+<iframe src="https://www.instagram.com/p/LMgIdlMJhT/embed/" width="666" height="600"></iframe>
 
- {{< instagram NaJ70_MJi5 >}}
+<iframe src="https://www.instagram.com/p/NaJ70_MJi5/embed/" width="666" height="600"></iframe>

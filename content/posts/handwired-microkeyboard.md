@@ -1,7 +1,7 @@
 ---
 title: "Handwired Microkeyboard"
 date: 2020-07-16T20:23:16-06:00
-draft: true
+draft: false
 tags: ["DIY", "Keyboards"]
 ---
 
@@ -20,13 +20,14 @@ General Outline:
 
 But this is what I ended up with:
 
-{{< instagram BTKlPJZjKru >}}
+<iframe src="https://www.instagram.com/p/BTKlPJZjKru/embed/" width="666" height="600"></iframe>
 
-{{< instagram BTkqNoHDDSc >}}
+<iframe src="https://www.instagram.com/p/BTkqNoHDDSc/embed/" width="666" height="600"></iframe>
+	
+<iframe src="https://www.instagram.com/p/BUM6IWZDtTM/embed/" width="666" height="600"></iframe>
+		
+<iframe src="https://www.instagram.com/p/BUM6ixfj3Yf/embed/" width="666" height="600"></iframe>
 
-{{< instagram BUM6IWZDtTM >}}
-
-{{< instagram BUM6ixfj3Yf >}}
 
 ![](/images/2020/Jul/mkeeb3.jpg)
 
