@@ -7,7 +7,7 @@ draft: false
 
 I build apps for Apple branded pocket, watch, and television computers, and have been doing it since iOS 5 was in beta.
 
-I [wrote ~~the~~ a book about Xcode](https://duckduckgo.com/?q=brett+ohland+Xcode+7+essentials) once.
+I [wrote ~~the~~ a book about Xcode](https://duckduckgo.com/?q=brett+ohland+Xcode+7+essentials).
 
 I like tabletop RPGs, building [mechanical keyboards](/tags/keyboards/), [baking bread](https://kensartisan.com/flour-water-salt-yeast/), and generally [building things](/tags/diy/).
 

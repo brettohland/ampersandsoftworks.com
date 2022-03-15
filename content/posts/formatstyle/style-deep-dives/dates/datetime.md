@@ -2,6 +2,7 @@
 title: "Date.FormatStyle.dateTime"
 date: 2022-03-13T15:51:05-06:00
 draft: false
+aliases: [/posts/date-formatstyledatetime/]
 tags: [ios15, formatstyle, deepdive]
 ---
 

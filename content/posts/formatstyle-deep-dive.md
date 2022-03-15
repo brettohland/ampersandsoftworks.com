@@ -85,15 +85,16 @@ For every data type that's supported by the new system, Apple has provided ways 
 
 Here are the deep-dives for each of the types, and their various customization options.
 
-- [Dates](/posts/date-and-formatstyle-and-you)
-	- [Date.FormatStyle](/posts/date-formatstyle)
-	- [Date.ComponentsFormatStyle](/posts/date-componentformatstyle)
-	- [Date.ISO8601FormatStyle](/posts/date-iso8601formatstyle)
-	- [Date.IntervalFormatStyle](/posts/date-intervalformatstyle)
-	- [Date.RelativeFormatStyle](/posts/date-relativeformatstyle)
-	- [Date.VerbatimFormatStyle](/posts/date-verbatimformatstlye)
-- [Measurements.FormatStyle](/posts/measurement-formatstyle)
-- [ByteCountFormatStyle](/posts/bytecountformatstyle)
+- [Dates](/posts/formatstyle-deep-dive/date-and-formatstyle-and-you/)
+	- [Date.FormatStyle](/posts/formatstyle/style-deep-dives/dates/formatstyle/)
+	- [Date.FormatStyle.dateTime()](/posts/formatstyle/style-deep-dives/dates/datetime/)
+	- [Date.ComponentsFormatStyle](/posts/formatstyle/style-deep-dives/dates/components/)
+	- [Date.ISO8601FormatStyle](/posts/formatstyle/style-deep-dives/dates/iso8601/)
+	- [Date.IntervalFormatStyle](/posts/formatstyle/style-deep-dives/dates/interval/)
+	- [Date.RelativeFormatStyle](/posts/formatstyle/style-deep-dives/dates/relative/)
+	- [Date.VerbatimFormatStyle](/posts/formatstyle/style-deep-dives/dates/verbatim/)
+- [Measurements.FormatStyle](/posts/formatstyle/style-deep-dives/measurement/)
+- [ByteCountFormatStyle](/posts/formatstyle/style-deep-dives/bytecountformatstyle/)
 - Lists
 - Floating point numbers
 - Integers

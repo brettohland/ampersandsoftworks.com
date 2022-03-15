@@ -2,6 +2,7 @@
 title: "Date.ComponentsFormatStyle"
 date: 2022-03-13T15:42:49-06:00
 draft: false
+aliases: [/posts/date-componentformatstyle/]
 tags: [ios15, formatstyle, deepdive]
 ---
 

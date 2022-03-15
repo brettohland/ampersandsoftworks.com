@@ -22,6 +22,8 @@ licenseURL = "https://creativecommons.org/licenses/by-sa/4.0"
 
 themeColor = "#FF1A87"
 
+enableRobotsTXT = true
+
 customCss = ["css/custom.css"]
 
   ## Set as many as you want.

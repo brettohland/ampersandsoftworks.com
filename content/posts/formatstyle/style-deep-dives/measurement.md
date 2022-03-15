@@ -2,6 +2,7 @@
 title: "Measurement.FormatStyle"
 date: 2022-03-13T21:09:18-06:00
 draft: false
+aliases: [/posts/dates/measurement-formatstyle]
 tags: [ios15, formatstyle, deepdive]
 ---
 

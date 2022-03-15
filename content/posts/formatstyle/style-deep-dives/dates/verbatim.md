@@ -2,6 +2,7 @@
 title: "Date.VerbatimFormatStyle"
 date: 2022-03-13T09:38:45-06:00
 draft: false
+aliases: [/posts/date-verbatimformatstyle/]
 tags: [ios15, formatstyle, deepdive]
 ---
 

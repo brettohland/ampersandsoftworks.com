@@ -2,6 +2,7 @@
 title: "Date.IntervalFormatStyle"
 date: 2022-03-13T15:29:55-06:00
 draft: false
+aliases: [/posts/date-intervalformatstyle/]
 tags: [ios15, formatstyle, deepdive]
 ---
 
