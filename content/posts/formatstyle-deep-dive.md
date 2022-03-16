@@ -15,6 +15,8 @@ To use this functionality in the past, you would have needed to create a new ins
 
 No more. According to Apple, the system is using these formatters under the hood and they're now handling the creation and cacheing of these objects for you.
 
+As an added bonus, Apple has added built-in support to the `Text` view in SwiftUI to fully support every `FormatStyle` detailed in this deep dive.
+
 <hr>
 
 [Download the Xcode Playground with all examples](https://github.com/brettohland/FormatStylesDeepDive/)
@@ -35,7 +37,7 @@ In this post:
 <hr>
 
 Every Deep Dive:
-
+- [SwiftUI Integration](/posts/formatstyle/swift-ui/)
 - [Dates](/posts/formatstyle-deep-dive/date-and-formatstyle-and-you/)
 	- [Date.FormatStyle](/posts/formatstyle/style-deep-dives/dates/formatstyle/)
 	- [Date.FormatStyle.dateTime()](/posts/formatstyle/style-deep-dives/dates/datetime/)
@@ -124,6 +126,7 @@ Here are the deep-dives for each of the types, and their various customization o
 	- [Number](/posts/formatstyle/style-deep-dives/numerical/number/)
 	- [Currency](/posts/formatstyle/style-deep-dives/numerical/currency/)
 	- [Percent](/posts/formatstyle/style-deep-dives/numerical/currency/)
+- [SwiftUI Integration](/posts/formatstyle/swift-ui/)
 
 <hr>
 
