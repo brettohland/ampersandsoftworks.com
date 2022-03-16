@@ -2,7 +2,7 @@
 title: "FormatStyle Deep Dive"
 date: 2022-03-12T09:44:41-07:00
 draft: false
-tags: [ios15, formatstyle, deepdive]
+tags: [ios15, formatstyle, deepdive, development, swift, swiftui]
 ---
 
 Apple introduced the new `FormatStyle` protocol with iOS 15. It allows for some truly remarkable things to happen when you're converting your data into localized strings. 

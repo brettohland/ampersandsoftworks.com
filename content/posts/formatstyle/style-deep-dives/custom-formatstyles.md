@@ -2,7 +2,7 @@
 title: "Custom FormatStyle"
 date: 2022-03-12T08:09:30-07:00
 draft: true
-tags: [ios15, formatstyle, deepdive]
+tags: [ios15, formatstyle, deepdive, development, swift, swiftui]
 ---
 
 [This is part of the FormatStyle Deep Dive series](/posts/formatstyle-deep-dive)

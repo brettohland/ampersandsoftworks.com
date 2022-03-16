@@ -2,7 +2,7 @@
 title: "Estimote Beacons"
 date: 2014-05-09T01:33:09+00:00
 draft: false
-tags: ["ibeacons"]
+tags: [ibeacons, development]
 ---
 
 ![](/images/2014/May/P5030551.jpg)

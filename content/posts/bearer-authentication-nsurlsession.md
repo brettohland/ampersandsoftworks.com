@@ -2,7 +2,7 @@
 title: "Sending Bearer Authentication Headers in iOS"
 date: 2020-07-15T17:05:10-06:00
 draft: false
-tags: ["swift"]
+tags: [swift, development]
 ---
 
 TL;DR: Apple's documentation is lies. Set `httpAdditionalHeaders` on `URLSessionConfiguration`.

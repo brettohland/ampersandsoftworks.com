@@ -2,7 +2,7 @@
 title: "Inscrutable Xcode Testing Errors"
 date: 2015-08-06T19:51:30+00:00
 draft: false
-tags: ["xcode", "xctest"]
+tags: [xcode, swift, development]
 ---
 
 I just experienced the most bizarre error while attempting to run some Xcode unit tests:

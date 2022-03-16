@@ -2,7 +2,7 @@
 title: "Inscrutable Swift/Xcode Errors"
 date: 2014-09-22T16:21:05+00:00
 draft: false
-tags: ["xcode", "swift"]
+tags: [xcode, swift, development]
 ---
 
 Ugh, what a horrible day of coding. I've been playing around with a small Swift app that's using Core Data and displaying the contents in a Table View. 

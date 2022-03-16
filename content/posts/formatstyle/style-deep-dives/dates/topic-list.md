@@ -4,7 +4,7 @@ date: 2022-03-11T06:53:13-07:00
 draft: false
 url: /posts/formatstyle-deep-dive/date-and-formatstyle-and-you/
 aliases: [/posts/date-and-formatstyle-and-you/]
-tags: [ios15, formatstyle, deepdive]
+tags: [ios15, formatstyle, deepdive, development, swift, swiftui]
 ---
 
 [This is part of the FormatStyle Deep Dive series](/posts/formatstyle-deep-dive)

@@ -2,7 +2,7 @@
 title: "ListFormatStyle"
 date: 2022-03-15T22:15:35-06:00
 draft: false
-tags: [ios15, formatstyle, deepdive]
+tags: [ios15, formatstyle, deepdive, development, swift, swiftui]
 ---
 
 [This is part of the FormatStyle Deep Dive series](/posts/formatstyle-deep-dive)

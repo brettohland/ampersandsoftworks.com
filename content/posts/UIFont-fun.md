@@ -1,8 +1,8 @@
----
+z---
 title: "UIFont Fun"
 date: 2021-11-24T10:18:52-07:00
 draft: false
-tags: []
+tags: [development, swift, swiftui]
 ---
 
 In your career, do you have a technical problem that you know you've solved multiple times, but it's infrequent enough that the lessons of how to actually implement never seem to stick around in your brain?

@@ -3,7 +3,7 @@ title: "Date.VerbatimFormatStyle"
 date: 2022-03-13T09:38:45-06:00
 draft: false
 aliases: [/posts/date-verbatimformatstyle/]
-tags: [ios15, formatstyle, deepdive]
+tags: [ios15, formatstyle, deepdive, development, swift, swiftui]
 ---
 
 [This is part of the FormatStyle Deep Dive series](/posts/formatstyle-deep-dive)

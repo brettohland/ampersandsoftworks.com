@@ -3,7 +3,7 @@ title: "Date.RelativeFormatStyle"
 date: 2022-03-12T09:36:33-07:00
 draft: false
 aliases: [/posts/date-relativeformatstyle/]
-tags: [ios15, formatstyle, deepdive]
+tags: [ios15, formatstyle, deepdive, development, swift, swiftui]
 ---
 
 [This is part of the FormatStyle Deep Dive series](/posts/formatstyle-deep-dive)
