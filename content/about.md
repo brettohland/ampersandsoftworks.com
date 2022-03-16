@@ -28,3 +28,4 @@ I love feedback!
 - There's some stuff on [Github](https://github.com/brettohland)
 - I used to use [Twitter](http://twitter.com/bretto) a lot, but now it bums me out
 
+<script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Buy me a coffee', '#FF1A87', 'Q5Q6BLZHQ');kofiwidget2.draw();</script> 
