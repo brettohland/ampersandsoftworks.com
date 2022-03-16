@@ -57,3 +57,11 @@ extension FormatStyle where Self == ToYen {
 Easy.
 
 Also. Don't use `Float` or `Double` types to store currency or initialize a Decimal. Their imprecision is going to lead you to be very sad.
+
+<hr>
+
+[Download the Xcode Playground with all examples](https://github.com/brettohland/FormatStylesDeepDive/)
+
+[See the examples as a gist](https://gist.github.com/brettohland/ac2fbd1446bc7bb64da491587b010e3c)
+
+<hr>

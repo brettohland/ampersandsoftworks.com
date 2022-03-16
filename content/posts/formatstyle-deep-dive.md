@@ -15,6 +15,8 @@ To use this functionality in the past, you would have needed to create a new ins
 
 No more. According to Apple, the system is using these formatters under the hood and they're now handling the creation and cacheing of these objects for you.
 
+<hr>
+
 [Download the Xcode Playground with all examples](https://github.com/brettohland/FormatStylesDeepDive/)
 
 [See the examples as a gist](https://gist.github.com/brettohland/ac2fbd1446bc7bb64da491587b010e3c)
@@ -29,6 +31,27 @@ In this post:
 	- [Using Custom Locales](#using-custom-locales)
 	- [Using Custom Calendars](#using-custom-calendars)
 - [Creating Custom FormatStyles](#creating-custom-formatstyles)
+
+<hr>
+
+Every Deep Dive:
+
+- [Dates](/posts/formatstyle-deep-dive/date-and-formatstyle-and-you/)
+	- [Date.FormatStyle](/posts/formatstyle/style-deep-dives/dates/formatstyle/)
+	- [Date.FormatStyle.dateTime()](/posts/formatstyle/style-deep-dives/dates/datetime/)
+	- [Date.ComponentsFormatStyle](/posts/formatstyle/style-deep-dives/dates/components/)
+	- [Date.ISO8601FormatStyle](/posts/formatstyle/style-deep-dives/dates/iso8601/)
+	- [Date.IntervalFormatStyle](/posts/formatstyle/style-deep-dives/dates/interval/)
+	- [Date.RelativeFormatStyle](/posts/formatstyle/style-deep-dives/dates/relative/)
+	- [Date.VerbatimFormatStyle](/posts/formatstyle/style-deep-dives/dates/verbatim/)
+- [Measurements.FormatStyle](/posts/formatstyle/style-deep-dives/measurement/)
+- [ByteCountFormatStyle](/posts/formatstyle/style-deep-dives/bytecountformatstyle/)
+- [ListFormatStyle](/posts/formatstyle/style-deep-dives/listformatstyle/)
+- [PersonNameComponents.FormatStyle](/posts/formatstyle/style-deep-dives/personnamecomponents/)
+- [Numerical Formatters](/posts/formatstyle/numerical)
+	- [Number](/posts/formatstyle/style-deep-dives/numerical/number/)
+	- [Currency](/posts/formatstyle/style-deep-dives/numerical/currency/)
+	- [Percent](/posts/formatstyle/style-deep-dives/numerical/currency/)
 
 <hr>
 
@@ -95,13 +118,14 @@ Here are the deep-dives for each of the types, and their various customization o
 	- [Date.VerbatimFormatStyle](/posts/formatstyle/style-deep-dives/dates/verbatim/)
 - [Measurements.FormatStyle](/posts/formatstyle/style-deep-dives/measurement/)
 - [ByteCountFormatStyle](/posts/formatstyle/style-deep-dives/bytecountformatstyle/)
-- Lists
-- Floating point numbers
-- Integers
-- Decimals
-- Names
-- Lists
-- TimeIntervals
+- [ListFormatStyle](/posts/formatstyle/style-deep-dives/listformatstyle/)
+- [PersonNameComponents.FormatStyle](/posts/formatstyle/style-deep-dives/personnamecomponents/)
+- [Numerical Formatters](/posts/formatstyle/numerical)
+	- [Number](/posts/formatstyle/style-deep-dives/numerical/number/)
+	- [Currency](/posts/formatstyle/style-deep-dives/numerical/currency/)
+	- [Percent](/posts/formatstyle/style-deep-dives/numerical/currency/)
+
+<hr>
 
 ## Using Custom Locales
 
