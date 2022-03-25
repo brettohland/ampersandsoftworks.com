@@ -134,7 +134,7 @@ Here are the deep-dives for each of the types, and their various customization o
 
 ## Using Custom Locales
 
-Any object of struct that conforms to the `FormatStyle` protocol inherits the `.locale()` instance method that lets you set the locale for an individual `.formatted()` call:
+Any object or struct that conforms to the `FormatStyle` protocol inherits the `.locale()` instance method that lets you set the locale for an individual `.formatted()` call:
 
 ```Swift
 let thePast = Calendar(identifier: .gregorian).date(byAdding: .day, value: -14, to: Date())!
