@@ -33,11 +33,13 @@ In this post:
 	- [Using Custom Locales](#using-custom-locales)
 	- [Using Custom Calendars](#using-custom-calendars)
 - [Creating Custom FormatStyles](#creating-custom-formatstyles)
+	- [Attributed String Output for Custom FormatStyles](#attributedsting-output-for-custom-formatstyles)
 
 <hr>
 
 Every Deep Dive:
 - [SwiftUI Integration](/posts/formatstyle/swift-ui/)
+- [Outputting AttributedStrings](/posts/formatstyle/style-deep-dives/attributed-strings)
 - [Dates](/posts/formatstyle-deep-dive/date-and-formatstyle-and-you/)
 	- [Date.FormatStyle](/posts/formatstyle/style-deep-dives/dates/formatstyle/)
 	- [Date.FormatStyle.dateTime()](/posts/formatstyle/style-deep-dives/dates/datetime/)
@@ -224,3 +226,16 @@ extension FormatStyle where Self == ToYen {
 30.formatted(.toYen) // "¥3,000"
 ```
 
+## AttributedSting Output for Custom FormatStyles
+
+You can easily add `AttributedString` support to custom `FormatStyle` implementations by creating a new `FormatStyle` who's `FormatOutput` type is `AttributedString` and not `String`.
+
+[See more details in the Attributed String Deep Dive](/posts/formatstyle/style-deep-dives/attributed-strings/#adding-attirbutedstring-output-to-custom-format-styles) 
+
+<hr>
+
+[Download the Xcode Playground with all examples](https://github.com/brettohland/FormatStylesDeepDive/)
+
+[See the examples as a gist](https://gist.github.com/brettohland/ac2fbd1446bc7bb64da491587b010e3c)
+
+<hr>

@@ -86,6 +86,15 @@ let inFrench = ByteCountFormatStyle(
 inFrench.format(terabyte) // "931,32 Go (1 000 000 000 000 octets)"
 terabyte.formatted(inFrench) // "931,32 Go (1 000 000 000 000 octets)"
 ```
+
+<hr>
+
+## Attributed String Output
+
+`AttributedString` output can be had by this formatter by adding the `.attributed` parameter to the `FormatStyle` during use.
+
+You can read more details in the [AttributedString Output deep-dive](/posts/formatstyle/style-deep-dives/attributed-strings/)
+
 <hr>
 
 [Download the Xcode Playground with all examples](https://github.com/brettohland/FormatStylesDeepDive/)

@@ -8,7 +8,7 @@ tags: [ios15, formatstyle, deepdive, development, swift, swiftui]
 
 [This is part of the FormatStyle Deep Dive series](/posts/formatstyle-deep-dive)
 
-Correctly displaying localized string values of dates is something that every developer needs. To do this correctly is incredibly complex, and thankfully Apple gives us a very powerful set of tools to do this correctly.
+Apple provides a convenience `.formatted` method on `Date` objects that allows you to customize the date and time styling within a few fixed enum values.
 
 <hr>
 
@@ -20,7 +20,7 @@ Correctly displaying localized string values of dates is something that every de
 
 ## DateStyle & TimeStyle
 
-Apple provides a convenience method on `Date` objects that allows you to customize the date and time styling within a few fixed enum values:
+The fixed enum vales available are:
 
 ``` Swift
 .formatted(date: Date.FormatStyle.DateStyle, time: Date.FormatStyle.TimeStyle)

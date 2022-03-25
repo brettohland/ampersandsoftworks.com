@@ -54,6 +54,14 @@ Every data type and style is supported. [Check out the full deep dive!](/posts/f
 
 <hr>
 
+# Attributed Strings
+
+`Text` views can accept `AttributedStrings` as a parameter in their initializers. Most of the `FormatStyle` implementations provided by apple have the ability to output `AttributedString` values instead of plain `String` types.
+
+[The `AttributedStrings` Deep Dive has full details on this.](/posts/formatstyle/style-deep-dives/attributed-strings/)
+
+<hr>
+
 [Download the Xcode Playground with all examples](https://github.com/brettohland/FormatStylesDeepDive/)
 
 [See the examples as a gist](https://gist.github.com/brettohland/ac2fbd1446bc7bb64da491587b010e3c)

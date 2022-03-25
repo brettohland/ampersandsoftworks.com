@@ -10,6 +10,8 @@ tags: [ios15, formatstyle, deepdive, development, swift, swiftui]
 
 This formatter gives you a localized string representation of the how much time has passed between the two dates. You can specify the units to display.
 
+> Note: This style **cannot** output `AttributedString` values by appending `.attributed`.
+
 <hr>
 
 [Download the Xcode Playground with all examples](https://github.com/brettohland/FormatStylesDeepDive/)

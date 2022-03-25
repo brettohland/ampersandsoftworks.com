@@ -10,6 +10,8 @@ tags: [ios15, formatstyle, deepdive, development, swift, swiftui]
 
 Displaying relative dates in a localized fashion is fiendishly complex when you sit and think about it. Apple providing it to us developers in such a simple package is a lifeline.
 
+> Note: This style **cannot** output `AttributedString` values by appending `.attributed`.
+
 <hr>
 
 [Download the Xcode Playground with all examples](https://github.com/brettohland/FormatStylesDeepDive/)

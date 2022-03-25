@@ -9,6 +9,8 @@ tags: [ios15, formatstyle, deepdive, development, swift, swiftui]
 
 The `ListFormatStyle` is an interesting set of building blocks for outputting a string representation of an array of values.
 
+> Note: This style **cannot** output `AttributedString` values by appending `.attributed`.
+
 <hr>
 
 [Download the Xcode Playground with all examples](https://github.com/brettohland/FormatStylesDeepDive/)

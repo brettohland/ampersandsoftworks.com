@@ -12,6 +12,8 @@ tags: [ios15, formatstyle, deepdive, development, swift, swiftui]
 
 Apple provides the `Date.FormatStyle.dateTime()` FormatStyle to allow us to mix and match the individual time units we want to display in our final localized string. Each of these time units can further be customized to allow you to fine-tune every aspect of your display string.
 
+> Note: This style **cannot** output `AttributedString` values by appending `.attributed`.
+
 <hr>
 
 [Download the Xcode Playground with all examples](https://github.com/brettohland/FormatStylesDeepDive/)
@@ -137,6 +139,14 @@ twosday.formatted(.dateTime.day(.defaultDigits))       // "22"
 ```
 
 The power of this cannot be overstated. While it is verbose, this allows for you to specify exactly the string representation of the date you would like to an almost ludicrous degree. 
+
+<hr>
+
+## Attributed String Output
+
+`AttributedString` output can be had by this formatter by adding the `.attributed` parameter to the `FormatStyle` during use.
+
+You can read more details in the [AttributedString Output deep-dive](/posts/formatstyle/style-deep-dives/attributed-strings/)
 
 <hr>
 

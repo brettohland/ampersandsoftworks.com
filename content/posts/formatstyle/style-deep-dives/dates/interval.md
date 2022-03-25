@@ -10,6 +10,8 @@ tags: [ios15, formatstyle, deepdive, development, swift, swiftui]
 
 The `Date.IntervalFormatStyle` displays the the lower and upper bounds of the date range.
 
+> Note: This style **cannot** output `AttributedString` values by appending `.attributed`.
+
 <hr>
 
 [Download the Xcode Playground with all examples](https://github.com/brettohland/FormatStylesDeepDive/)

@@ -41,7 +41,7 @@ twosday.formatted(date: .complete, time: .complete) // "Tuesday, February 22, 20
 
 ## [Date.FormatStyle.dateTime()](/posts/formatstyle/style-deep-dives/dates/datetime/)
 
-Allows you to specify the exact date components you would like to output. Furthermore, these components can be individually configured for maximum flexability.
+Allows you to specify the exact date components you would like to output. Furthermore, these components can be individually configured for maximum flexibility.
 
 ```Swift
 twosday.formatted(.dateTime.year().month().day().hour().minute().second()) // "Feb 22, 2022, 2:22:22 AM"
@@ -113,3 +113,4 @@ The only FormatStyle that isn't localized. The `Date.VerbatimFormatStyle` lets y
 [See the examples as a gist](https://gist.github.com/brettohland/ac2fbd1446bc7bb64da491587b010e3c)
 
 <hr>
+

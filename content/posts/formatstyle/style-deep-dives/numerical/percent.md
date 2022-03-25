@@ -126,6 +126,14 @@ Float(10).formatted(.percent.scale(200.0).notation(.compactName).grouping(.autom
 ```
 <hr>
 
+## Attributed String Output
+
+`AttributedString` output can be had by this formatter by adding the `.attributed` parameter to the `FormatStyle` during use.
+
+You can read more details in the [AttributedString Output deep-dive](/posts/formatstyle/style-deep-dives/attributed-strings/)
+
+<hr>
+
 [Download the Xcode Playground with all examples](https://github.com/brettohland/FormatStylesDeepDive/)
 
 [See the examples as a gist](https://gist.github.com/brettohland/ac2fbd1446bc7bb64da491587b010e3c)
