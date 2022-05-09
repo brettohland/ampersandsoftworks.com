@@ -7,8 +7,6 @@ theme = "soho"
 summarylength = 20
 enableEmoji = true
 
-googleAnalytics = "UA-3840385-15"
-
 [params]
 author = "brett ohland"
 description = "A development blog for pocket computer software and DIY keyboards"

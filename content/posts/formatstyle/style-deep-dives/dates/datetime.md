@@ -142,10 +142,6 @@ The power of this cannot be overstated. While it is verbose, this allows for you
 
 <hr>
 
-## Attributed String Output
-
-`AttributedString` output can be had by this formatter by adding the `.attributed` parameter to the `FormatStyle` during use.
-
 You can read more details in the [AttributedString Output deep-dive](/posts/formatstyle/style-deep-dives/attributed-strings/)
 
 <hr>
