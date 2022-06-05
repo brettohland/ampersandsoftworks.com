@@ -1,0 +1,47 @@
+/**
+ *  Example CSS file that can be used to style Splash HTML output
+ *  Copyright (c) John Sundell 2018
+ *  MIT license - see LICENSE.md
+ */
+
+.splash {
+  
+  @extend .highlight;
+  
+  .keyword { 
+    @extend .k;
+  }
+  
+  .string { 
+    @extend .s;
+  }
+  
+  .type { 
+    @extend .nt; 
+  }
+  
+  .call { 
+    @extend .nf;
+  }
+  
+  .property { 
+    @extend .nt;
+  }
+  
+  .number { 
+    @extend .m;
+  }
+  
+  .comment { 
+    @extend .c;
+  }
+  
+  .dotAccess { 
+    @extend .kt; 
+  }
+  
+  .preprocessing { 
+    @extend .cp;
+  }
+  
+}
