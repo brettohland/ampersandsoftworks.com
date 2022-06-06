@@ -32,11 +32,11 @@ Hello there!
 
 This deep-dive became so complex that I broke it out into its own site:
 
-### [fuckingformatstyle.com](fuckingformatstyle.com)
+### [fuckingformatstyle.com](https://fuckingformatstyle.com)
 
 or
 
-### [goshdarnformatstyle.com](goshdarnformatstyle.com)
+### [goshdarnformatstyle.com](https://goshdarnformatstyle.com)
 
 ---
 
