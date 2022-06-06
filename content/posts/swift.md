@@ -1,8 +1,0 @@
----
-title: "Swift"
-date: 2014-06-02T23:22:18+00:00
-draft: false
-tags: ["swift"]
----
-
-[D:](https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/Swift_Programming_Language/index.html)

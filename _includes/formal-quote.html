@@ -1,0 +1,22 @@
+<figure class="formal">
+    {% if include.link %}
+    <blockquote cite="{{ include.link }}">
+    {% else %}
+    <blockquote>
+    {% endif %}
+        <p>{{ desc }}</p>
+    </blockquote>
+    {% if include.source %}
+    <blockquote cite="{{ include.source }}">
+    {% else %}
+    <blockquote>
+    {% endif %}
+    {% if include.author %}
+    <figcaption>
+      &mdash;include.author
+      {% if include.source %}
+      ,<cite>include.source</cite>
+      {% endif %}
+    </figcaption>
+    {% endif %}
+</figure>

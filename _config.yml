@@ -1,0 +1,75 @@
+#-------------------------------
+# General Site Settings
+title: Ampersand Softworks
+logo: # You can add own logo. For example '/images/logo.png'.
+description: A development blog about Swift, iOS, Keyboards, and Tabletop Gaming.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://ampersandsoftworks.com" # the base hostname & protocol for your site, e.g. http://example.com
+
+#-------------------------------
+# Author Settings
+author:
+  name: brett ohland
+  bio: I make software for Apple brand pocket computers.
+  avatar: '/images/headshot.jpg'
+
+social:
+- {icon: "ion-logo-twitter", label: Twitter, link: "https://twitter.com/bretto"}
+- {icon: "ion-logo-linkedin", label: LinkedIn, link: "https://www.linkedin.com/in/brettohland/"}
+- {icon: "ion ion-logo-github", label: GitHub, link: "https://github.com/brettohland"}
+
+# Example of adding a new link to the author section and footer - {icon: "ion-logo-github", label: Github, link: "https://github.com"}
+# Other icons can be found at https://ionicons.com/v4/
+
+#-------------------------------
+# Hero Settings
+hero:
+  hero__title: Hello!
+  hero__description: I build apps for Apple branded pocket, watch, and television computers, and have been doing it since iOS 5 was in beta.
+  hero__image: '/images/headshot.jpg'
+
+#-------------------------------
+# Build Settings
+markdown: kramdown
+permalink: /:title
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll/tagging
+  - jekyll-themes-control
+  - jekyll-redirect-from
+  - jekyll-feed
+
+paginate: 5
+paginate_path: "/page/:num"
+
+# Pages Path
+defaults:
+  - scope:
+      path: '_pages'
+    values:
+      permalink: /:basename/index:output_ext
+  - scope:
+      path: "_posts"
+      type: posts
+    values:
+      permalink: posts/:categories/:title/index:output_ext
+
+include:
+  - _pages
+
+# Tags
+tag_page_dir:         tag
+tag_page_layout:      tag_page
+tag_permalink_style:  /:title
+
+sass:
+  sass_dir: _sass
+  style: compressed
+  
+feed:
+  categories:
+    - development
+
+# Ignore these files during generation
+exclude: [README.md, deploy.sh]
