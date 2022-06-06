@@ -39,7 +39,6 @@ plugins:
   - jekyll-themes-control
   - jekyll-redirect-from
   - jekyll-feed
-  - jekyll-tidy
 
 paginate: 5
 paginate_path: "/page/:num"
@@ -74,8 +73,3 @@ feed:
 
 # Ignore these files during generation
 exclude: [README.md, deploy.sh]
-
-# Jekyll tidy
-jekyll_tidy:
-  exclude:
-    - _posts/**/*.md  # excludes all markdown files anywhere within the _posts directory
