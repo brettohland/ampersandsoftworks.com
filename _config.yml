@@ -68,8 +68,9 @@ sass:
   style: compressed
   
 feed:
-  categories:
-    - development
+  tags:
+    only:
+      - development
 
 # Ignore these files during generation
 exclude: [README.md, deploy.sh]
