@@ -3,7 +3,7 @@ layout: post
 title: FormatSyle Deep Dive
 description: "Apple failed to document it, so I built a whole site for it: fuckingformatstyle.com"
 date: 2022-03-12T09:44:41-07:00
-tags: [ios15, formatstyle, development, swift, swiftui]
+tags: [ios15, formatstyle, development, swift, swiftui, formatstyle]
 redirect_from:
   - /posts/formatstyle-deep-dive/
   - /posts/formatstyle/style-deep-dives/dates/relative/
