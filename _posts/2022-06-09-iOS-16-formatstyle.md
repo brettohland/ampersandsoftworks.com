@@ -238,9 +238,12 @@ omitStyle.format(httpsURL) // ""
 omitStyle.format(ftpURL) // "ftp://jAppleseed@apple.com:80/macbook-pro?get-free#someFragmentOfSomething"
 {% endsplash %}
 
-## 5. Easier VerbatimFormatStyle on Dates
+## 5. Date.VerbatimFormatStyle Changes
 
-You no longer need to initialize and hold onto a `VerbatimFormatStyle` in order to use them. All `Date` objects can now use the now have the `.verbatim` extension:
+There's a couple of significant changes to the Verbatim style. 
+
+1. The style can now have the `locale` set.
+2. You can access it using the `.verbatim()` extension on `FormatStyle`
 
 {% splash %}
 let twosday = Calendar(identifier: .gregorian).date(from: twosdayDateComponents)!
@@ -254,7 +257,6 @@ twosday.formatted(
     )
 ) // "2:22:22 上午"
 {% endsplash %}
-
 
 ## Conclusion
 Not a bad set of updates. It's nice to see new units getting new format styles immediately.
