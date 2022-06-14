@@ -1,7 +1,7 @@
 ---
 layout: post
 title: What's new with FormatStyles in iOS 16
-description: Guess documenting FormatSytle is my life now
+description: Guess documenting FormatStyle is my life now
 tags: [ios16, formatstyle, development, swift, swiftui, formatstyle]
 ---
 

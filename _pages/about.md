@@ -10,7 +10,7 @@ Some small bits of information about me:
 
 - I build apps for Apple branded pocket, watch, and television computers, and have been doing it since iOS 5 was in beta.
 - I live in Calgary, Alberta (Canada).
-- I [wrote ~~the~~ a book about Xcode](https://duckduckgo.com/?q=brett+ohland+Xcode+7+essentials).
+- I [wrote ~~the~~ a book about Xcode](https://isbnsearch.org/isbn/9781785889011).
 - I like tabletop RPGs, building [mechanical keyboards](/tags/keyboards/), [baking bread](https://kensartisan.com/flour-water-salt-yeast/), and generally [building things](/tags/diy/).
 - In a previous life, [I made Flash websites](http://web.archive.org/web/20040602230813/http://www.insertcoinmedia.com/seven.html).
 - My [first app](https://github.com/brettohland/dbldbl) was named after a Tim Hortons beverage.
