@@ -74,3 +74,5 @@ feed:
 
 # Ignore these files during generation
 exclude: [README.md, deploy.sh]
+
+include: ['.htaccess']
