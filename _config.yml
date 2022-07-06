@@ -55,8 +55,7 @@ defaults:
     values:
       permalink: posts/:categories/:title/index:output_ext
 
-include:
-  - _pages
+include: ['.htaccess', '_pages']
 
 # Tags
 tag_page_dir:         tag
@@ -74,5 +73,3 @@ feed:
 
 # Ignore these files during generation
 exclude: [README.md, deploy.sh]
-
-include: ['.htaccess']

@@ -2,7 +2,7 @@
 layout: post
 title: Formatting your own types
 description: A full example of adding all of the bells and whistles of ParseableFormatStyle onto your own types, including AttributedString output.
-tags: [ios16, formatstyle, development, swift, formatstyle]
+tags: [formatstyle, development, swift, formatstyle]
 ---
 
 [So you've read the gosh darn site and know how to get strings from data types.](https://goshdarnformatstyle.com). 
