@@ -22,7 +22,11 @@ Well you're in luck, I have a simple solution for you.
 # Why?
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 From Zoë Smith:
+=======
+From Zoë Smith, [writing at NSHipster](https://nshipster.com/xcode-source-extensions/):
+>>>>>>> ad557e3 (Adding Xcode Extensions help post)
 =======
 From Zoë Smith, [writing at NSHipster](https://nshipster.com/xcode-source-extensions/):
 >>>>>>> ad557e3 (Adding Xcode Extensions help post)
