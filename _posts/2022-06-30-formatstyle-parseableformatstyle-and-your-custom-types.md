@@ -11,6 +11,8 @@ tags: [formatstyle, development, swift, formatstyle]
 
 If your next thought was: "Now I want to do this with my own data types", then this is for you.
 
+**TL;DR:** [Download the Xcode Playground](https://github.com/brettohland/ampersandsoftworks.com-examples/tree/main/%5B2022-06-30%5D%20ISBN-FormatStyle) or [See everything as a Gist](https://gist.github.com/brettohland/744fcbd2a8aa77907ec84a286e8da3b0)
+
 # Sections
 
 1. [Our Data Type](#our-data-type)
@@ -718,4 +720,4 @@ final class ISBNTests: XCTestCase {
 }
 {% endsplash %}
 
-[Download the Xcode Playground](https://github.com/brettohland/ISBN-FormatStyle/) or [See everything as a Gist](https://gist.github.com/brettohland/744fcbd2a8aa77907ec84a286e8da3b0)
+[Download the Xcode Playground](https://github.com/brettohland/ampersandsoftworks.com-examples/tree/main/%5B2022-06-30%5D%20ISBN-FormatStyle) or [See everything as a Gist](https://gist.github.com/brettohland/744fcbd2a8aa77907ec84a286e8da3b0)

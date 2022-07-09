@@ -5,7 +5,7 @@ description: The other side of the FormatStyle coin, getting our data from strin
 tags: [formatstyle, development, swift, formatstyle]
 ---
 
-**TL;DR** [Xcode Playground](https://github.com/brettohland/ParseableFormatStyle-Examples) or [Examples as Gist](https://gist.github.com/brettohland/f07fa1069e495d96dda098f13adaefae)
+**TL;DR** [Xcode Playground](https://github.com/brettohland/ampersandsoftworks.com-examples/tree/main/%5B2022-06-14%5D%20ParseableFormatStyle) or [Examples as Gist](https://gist.github.com/brettohland/f07fa1069e495d96dda098f13adaefae)
 
 The venerable [(NS)Formatter class (and Apple's various subclasses)](https://developer.apple.com/documentation/foundation/formatter/) are an Objective-C based API that is most well known as the go-to method for converting data types into strings. One of the lesser-known features of the APIs are that these same formatters can do the reverse: parse strings into their respective data types. 
 
