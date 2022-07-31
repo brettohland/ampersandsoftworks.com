@@ -30,8 +30,6 @@ If your next thought was: "Now I want to do this with my own data types", then t
 
 ---
 
-**TL;DR:** [Download the Xcode Playground](https://github.com/brettohland/ISBN-FormatStyle/) or [See everything as a Gist](https://gist.github.com/brettohland/744fcbd2a8aa77907ec84a286e8da3b0)
-
 The API for this example is based heavily on the [`Date.FormatStyle`]() API, and the [URL FormatStyle and ParseStyle Proposal](https://forums.swift.org/t/url-formatstyle-and-parsestrategy/56607) that was ultimately included in iOS 16.
 
 We're going to define a custom data type, and then add the following features:
@@ -605,7 +603,11 @@ public extension ISBN.FormatStyle {
     }
 }
 
+{% endsplash %}
+
 ## ParseableFormatStyle Conformance & Convenience Extensions
+
+{% splash %}
 
 // MARK: ParseableFormatStyle conformance on ISBN.FormatStyle
 
