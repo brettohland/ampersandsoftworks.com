@@ -216,16 +216,42 @@ try? PersonNameComponents(
 
 ## URLs (iOS 16/Xcode 14 only)
 
-New for iOS 16, you can now parse URLs using this exact manner:
+Xcode 14, you can now use the new `URL.FormatStyle.ParseStrategy` struct to parse URLs (as an alternative to using the venerable `URL(string:relativeTo)` initializer).
+
+You can set as options for each component to be required, optional, or default to a set value:
 
 {% splash %}
-try? URL.FormatStyle()
-    .parseStrategy.parse("https://jAppleseed:Test1234@apple.com:80/macbook-pro?get-free#someFragmentOfSomething")
 
-try? URL(
-    "https://jAppleseed:Test1234@apple.com:80/macbook-pro?get-free#someFragmentOfSomething",
-    strategy: URL.FormatStyle().parseStrategy
+try URL.FormatStyle.Strategy(port: .defaultValue(80)).parse("http://www.apple.com") // http://www.apple.com:80
+try URL.FormatStyle.Strategy(port: .optional).parse("http://www.apple.com") // http://www.apple.com
+try URL.FormatStyle.Strategy(port: .required).parse("http://www.apple.com") // throws an error
+
+// This returns a valid URL
+try URL.FormatStyle.Strategy()
+    .scheme(.required)
+    .user(.required)
+    .password(.required)
+    .host(.required)
+    .port(.required)
+    .path(.required)
+    .query(.required)
+    .fragment(.required)
+    .parse("https://jAppleseed:Test1234@apple.com:80/macbook-pro?get-free#someFragmentOfSomething")
+
+// This throws an error (the port is missing)
+try URL.FormatStyle.Strategy()
+    .scheme(.required)
+    .user(.required)
+    .password(.required)
+    .host(.required)
+    .port(.required)
+    .path(.required)
+    .query(.required)
+    .fragment(.required)
+    .parse("https://jAppleseed:Test1234@apple.com/macbook-pro?get-free#someFragmentOfSomething")
 {% endsplash %}
+
+By default, only the scheme and host are required.
 
 ---
 
