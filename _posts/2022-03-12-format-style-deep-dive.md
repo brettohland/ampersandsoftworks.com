@@ -3,7 +3,7 @@ layout: post
 title: FormatSyle Deep Dive
 description: "Apple failed to document it, so I built a whole site for it: fuckingformatstyle.com"
 date: 2022-03-12T09:44:41-07:00
-tags: [ios15, formatstyle, development, swift, swiftui, formatstyle]
+tags: [ios, formatstyle, development, swift, swiftui, formatstyle]
 redirect_from:
   - /posts/formatstyle-deep-dive/
   - /posts/formatstyle/style-deep-dives/dates/relative/
@@ -30,11 +30,11 @@ redirect_from:
 
 Hello there!
 
-This deep-dive became so complex that I broke it out into its own site:
+What started as a deep dive into Format Styles in iOS 15 and iOS 16 quickly outgrew a series of posts on a blog. In the grande tradition of [cuss including titled informational websites who have a singular goal](http://fuckingsyntaxsite.com). I present to you:
 
 ### [fuckingformatstyle.com](https://fuckingformatstyle.com)
 
-or
+or (for those needing less cussing in their life)
 
 ### [goshdarnformatstyle.com](https://goshdarnformatstyle.com)
 
@@ -54,29 +54,34 @@ In all of my research, the biggest hurdle I ran into was not knowing what I coul
 
 ## Everything Else
 
-I've attempted to break things out into their respective sections, for even easier use.
+Everything has been organized by their use cases and includes styles available for use in both Xcode 13 and Xcode 14.
 
 * [Minimum Requirements](https://fuckingformatstyle.com/#minimum-requirements)
 * [The Basics](https://fuckingformatstyle.com/#the-basics)
-* [Number Styles](https://fuckingformatstyle.com/#number-style)
-    * [Percent Style](https://fuckingformatstyle.com/#percent-style)
-    * [Currency Style](https://fuckingformatstyle.com/#currency-style)
-* [Single Date Styles](https://fuckingformatstyle.com/#date-and-time-single-date)
-    * [Date and Time Style](https://fuckingformatstyle.com/#date-and-time-single-date)
-    * [dateTime Style](https://fuckingformatstyle.com/#datetime-compositing-single-date)
-    * [ISO 8601 Style](https://fuckingformatstyle.com/#iso-8601-date-style-single-date)
-    * [Relative Date Style](https://fuckingformatstyle.com/#relative-date-style-single-date)
-    * [Verbatim Style](https://fuckingformatstyle.com/#verbatim-date-style-single-date)
-* [Date Range Styles](https://fuckingformatstyle.com/#interval-date-style-date-range)
-    * [Interval Style](https://fuckingformatstyle.com/#interval-date-style-date-range)
-    * [Components Style](https://fuckingformatstyle.com/#datetime-compositing-single-date)
-* [Measurement Style](https://fuckingformatstyle.com/#measurement-style)
-* [List Style](https://fuckingformatstyle.com/#list-style)
-* [Person Name Style](https://fuckingformatstyle.com/#person-name-component-style)
-* [Byte Count Style](https://fuckingformatstyle.com/#byte-count-style)
-* [Custom FormatStyle](https://fuckingformatstyle.com/#custom-format-style)
-* [SwiftUI Integration](https://fuckingformatstyle.com/#swiftui-integration)
-* [AttributedString Output](https://fuckingformatstyle.com/#attributed-string-output)
+* [Number Styles](https://fuckingformatstyle.com/numeric-styles/)
+    * [Number Style](https://fuckingformatstyle.com/numeric-styles/#number-style)
+    * [Percent Style](https://fuckingformatstyle.com/numeric-styles/#percent-style)
+    * [Currency Style](https://fuckingformatstyle.com/numeric-styles/#currency-style)
+* [Single Date Styles](https://fuckingformatstyle.com/date-styles/)
+    * [Compositing](https://fuckingformatstyle.com/date-styles/#compositing)
+    * [Date and Time Style](https://fuckingformatstyle.com/date-styles/#date-and-time-single-date)
+    * [ISO 8601 Style](https://fuckingformatstyle.com/date-styles/#iso-8601-date-style-single-date)
+    * [Relative Date Style](https://fuckingformatstyle.com/date-styles/#relative-date-style-single-date)
+    * [Verbatim Style](https://fuckingformatstyle.com/date-styles/#verbatim-date-style-single-date)
+* [Date Range Styles](https://fuckingformatstyle.com/date-range-styles/)
+    * [Interval Style](https://fuckingformatstyle.com/date-range-styles/#interval-date-style-date-range)
+    * [Components Style](https://fuckingformatstyle.com/date-range-styles/#components-date-style-date-range)
+* [Duration Styles](https://fuckingformatstyle.com/duration-styles/)
+  * [Time Style](https://fuckingformatstyle.com/duration-styles/#time-style)
+  * [Units Style](https://fuckingformatstyle.com/duration-styles/#units-style)
+* [Measurement Style](https://fuckingformatstyle.com/measurement-style/)
+* [List Style](https://fuckingformatstyle.com/list-style/)
+* [Person Name Style](https://fuckingformatstyle.com/person-name-style/)
+* [Byte Count Style](https://fuckingformatstyle.com/byte-count-style/)
+* [URL Style](https://fuckingformatstyle.com/url-style/)
+* [Custom FormatStyle](https://fuckingformatstyle.com/custom-styles/)
+* [SwiftUI Integration](https://fuckingformatstyle.com/swiftui/)
+* [AttributedString Output](https://fuckingformatstyle.com/attributed-string-output/)
 
 ## Downloads
 

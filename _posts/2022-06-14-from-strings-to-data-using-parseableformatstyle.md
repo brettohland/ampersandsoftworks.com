@@ -2,7 +2,7 @@
 layout: post
 title: From Strings to Data using ParsableFormatStyle
 description: The other side of the FormatStyle coin, getting our data from strings.
-tags: [formatstyle, development, swift, formatstyle]
+tags: [ios, formatstyle, development, swift, formatstyle]
 ---
 
 **TL;DR** [Xcode Playground](https://github.com/brettohland/ampersandsoftworks.com-examples/tree/main/%5B2022-06-14%5D%20ParseableFormatStyle) or [Examples as Gist](https://gist.github.com/brettohland/f07fa1069e495d96dda098f13adaefae)
