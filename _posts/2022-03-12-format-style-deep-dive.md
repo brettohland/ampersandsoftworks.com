@@ -64,7 +64,7 @@ Everything has been organized by their use cases and includes styles available f
     * [Currency Style](https://fuckingformatstyle.com/numeric-styles/#currency-style)
 * [Single Date Styles](https://fuckingformatstyle.com/date-styles/)
     * [Compositing](https://fuckingformatstyle.com/date-styles/#compositing)
-    * [Date and Time style](https://fuckingformatstyle.com/date-styles//#date-and-time-single-date)
+    * [Date and Time Style](https://fuckingformatstyle.com/date-styles/#date-and-time-single-date)
     * [ISO 8601 Style](https://fuckingformatstyle.com/date-styles/#iso-8601-date-style-single-date)
     * [Relative Date Style](https://fuckingformatstyle.com/date-styles/#relative-date-style-single-date)
     * [Verbatim Style](https://fuckingformatstyle.com/date-styles/#verbatim-date-style-single-date) (Updated for Xcode 14)
