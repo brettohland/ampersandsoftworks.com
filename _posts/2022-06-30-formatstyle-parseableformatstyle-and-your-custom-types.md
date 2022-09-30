@@ -2,7 +2,7 @@
 layout: post
 title: Formatting your own types
 description: A full example of adding all of the bells and whistles of ParseableFormatStyle onto your own types, including AttributedString output.
-tags: [formatstyle, development, swift, formatstyle]
+tags: [ios, formatstyle, development, swift, formatstyle]
 ---
 
 [So you've read the gosh darn site and know how to get strings from data types.](https://goshdarnformatstyle.com). 
@@ -29,6 +29,8 @@ If your next thought was: "Now I want to do this with my own data types", then t
 5. [Bonus Round: Unit Testing](#bonus-round--unit-testing)
 
 ---
+
+**TL;DR:** [Download the Xcode Playground](https://github.com/brettohland/ISBN-FormatStyle/) or [See everything as a Gist](https://gist.github.com/brettohland/744fcbd2a8aa77907ec84a286e8da3b0)
 
 The API for this example is based heavily on the [`Date.FormatStyle`]() API, and the [URL FormatStyle and ParseStyle Proposal](https://forums.swift.org/t/url-formatstyle-and-parsestrategy/56607) that was ultimately included in iOS 16.
 

@@ -3,7 +3,7 @@ layout: post
 title: FormatSyle Deep Dive
 description: "Apple failed to document it, so I built a whole site for it: fuckingformatstyle.com"
 date: 2022-03-12T09:44:41-07:00
-tags: [ios15, formatstyle, development, swift, swiftui, formatstyle]
+tags: [ios, formatstyle, development, swift, swiftui, formatstyle]
 redirect_from:
   - /posts/formatstyle-deep-dive/
   - /posts/formatstyle/style-deep-dives/dates/relative/
@@ -30,11 +30,11 @@ redirect_from:
 
 Hello there!
 
-This deep-dive became so complex that I broke it out into its own site:
+What started as a deep dive into Format Styles in iOS 15 and iOS 16 quickly outgrew a series of posts on a blog. In the grande tradition of [cuss including titled informational websites who have a singular goal](http://fuckingsyntaxsite.com). I present to you:
 
 ### [fuckingformatstyle.com](https://fuckingformatstyle.com)
 
-or
+or (for those needing less cussing in their life)
 
 ### [goshdarnformatstyle.com](https://goshdarnformatstyle.com)
 
@@ -54,7 +54,7 @@ In all of my research, the biggest hurdle I ran into was not knowing what I coul
 
 ## Everything Else
 
-I've attempted to break things out into their respective sections, for even easier use.
+Everything has been organized by their use cases and includes styles available for use in both Xcode 13 and Xcode 14.
 
 * [Minimum Requirements](https://fuckingformatstyle.com/#minimum-requirements)
 * [The Basics](https://fuckingformatstyle.com/#the-basics)

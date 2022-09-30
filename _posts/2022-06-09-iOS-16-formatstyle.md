@@ -2,12 +2,12 @@
 layout: post
 title: What's new with FormatStyles in iOS 16
 description: Guess documenting FormatStyle is my life now
-tags: [ios16, formatstyle, development, swift, swiftui, formatstyle]
+tags: [ios, formatstyle, development, swift, swiftui, formatstyle]
 ---
 
 Another year, another WWDC. The yearly developer conference was firing on all cylinders this year, with some nice additions and one big fix on the `FormatStyle` front.
 
-> This is only a surface level overview of what's new. I've updated [fuckingformatstyle](https://fuckingformatstyle)/[goshdarnformatstyle](https://goshdarnformatstyle.com) with all of the new details.
+> This only scratches the surface on the topic! I built a whole website to cover format styles in excruciating detail: [fuckingformatstyle.com](https://fuckingformatstyle.com)/[goshdarnformatstyle.com](https://goshdarnformatstyle.com)
 
 ---
 

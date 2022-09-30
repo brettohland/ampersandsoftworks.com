@@ -21,7 +21,7 @@ Well you're in luck, I have a simple solution for you.
 
 # Why?
 
-From Zoë Smith:
+From [Xcode​Kit and Xcode Source Editor Extensions](https://nshipster.com/xcode-source-extensions/) on [NSHipster](https://nshipster.com):
 
 <figure class="quote">
   <blockquote cite="https://nshipster.com/xcode-source-extensions/">
