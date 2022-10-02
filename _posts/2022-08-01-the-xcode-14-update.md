@@ -2,7 +2,7 @@
 layout: post
 title: The Xcode 14 Format Style Updates
 description: I've released a big update for Fucking FormatStyle/Gosh Darned FormatStyle.
-tags: [formatstyle, development, swift, formatstyle]
+tags: [formatstyle, development, swift]
 ---
 
 I've been toiling away in the format style mines for the last month off and on as I've been fully documenting the new `FormatStyle` stuff that Apple has been including in the Xcode 14 betas.
