@@ -223,7 +223,7 @@ Before we dive deeply into the details, we can cover the `width` parameter quick
 | `.abbreviated` | Displays an abbreviated unit description            |
 | `.narrow`      | Displays the unit in the least number of characters |
 
-In general, `wide` will spell out the name of the unit in the most verbose way possible. `.abbreviated` will output the shortened version of the unit, and `.narow` will remove any whitespace characters.
+In general, `wide` will spell out the name of the unit in the most verbose way possible. `.abbreviated` will output the shortened version of the unit, and `.narrow` will remove any whitespace characters.
 
 {% splash %}
 
@@ -356,7 +356,7 @@ The shared options are:
 | Option        | Description                                                                         |
 | ------------- | ----------------------------------------------------------------------------------- |
 | `.general`    | Outputs the value in the most generalized way for the given locale                  |
-| `.asProvided` | Outputs a string value of the unit the `Dimention` was created with or converted to |
+| `.asProvided` | Outputs a string value of the unit the `Dimension` was created with or converted to |
 
 Therefore this means that for the US English locale, the system defines fractional feet as the output when the `.general` usage parameter is used. Whereas for the Sweden Swedish locale defines the `.general` usage parameter as outputting fractional metres.
 
@@ -442,7 +442,7 @@ myHeight.formatted(
 
 You can now see why storing your physical values as `Measurement` types can unlock some incredible features inside of your app. Converting and doing math on these values can be helpful, but the real power comes in when you get so much localization power for free.
 
-Even though a country officially uses one set of units, colloquially a population can use different sets of units depending on the situation. Canadians give out their height and weight in metric units, British roads use miles per hour as their speed, etc. Much like using the `Date` type to store dates [removes so many common date mistakes](https://gist.github.com/timvisee/fcda9bbdff88d45cc9061606b4b923ca), using `Measurement` for store and format your measurements saves you from having an encyclopedic knowledge of local customs.
+Even though a country officially uses one set of units, colloquially a population can use different sets of units depending on the situation. Canadians give out their height and weight in imperial units, British roads use miles per hour as their speed, etc. Much like using the `Date` type to store dates [removes so many common date mistakes](https://gist.github.com/timvisee/fcda9bbdff88d45cc9061606b4b923ca), using `Measurement` for store and format your measurements saves you from having an encyclopedic knowledge of local customs.
 
 The next time you're faced with using a physical measurement value, it may be tempting to simply store it as a numeric type. But I hope now you see the power in fully embracing using `Measurement` from now on.
 
