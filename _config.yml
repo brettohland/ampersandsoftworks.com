@@ -2,7 +2,7 @@
 # General Site Settings
 title: Ampersand Softworks
 logo: # You can add own logo. For example '/images/logo.png'.
-description: A development blog about Swift, iOS, Keyboards, and Tabletop Gaming.
+description: Your friendly neighbourhood development blogs for Apple branded pocket computers.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://ampersandsoftworks.com" # the base hostname & protocol for your site, e.g. http://example.com
 
@@ -65,7 +65,7 @@ tag_permalink_style:  /:title
 sass:
   sass_dir: _sass
   style: compressed
-  
+
 feed:
   tags:
     only:

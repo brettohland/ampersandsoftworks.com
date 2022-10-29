@@ -25,6 +25,12 @@ layout: default
     </div>
   </div>
 
+  {% if page.draft %}
+  <div class="draft_notice">
+    <p><img src="/images/skull.gif" title="An animated spinning skull" />Psst. This post is a draft and is therefore a work in progress.<img src="/images/skull.gif" title="An animated spinning skull" /></p>
+  </div>
+  {% endif %}
+
   <article class="post">
 
     <div class="post__content">
@@ -32,7 +38,6 @@ layout: default
     </div>
 
     <div class="post__bottom">
-      
       <div class="post__share">
         <ul class="share__list list-reset">
           <li class="share__item">

@@ -8,7 +8,9 @@ layout: default
   <div class="row animate">
     {% if site.posts.size > 0 %}
       {% for post in paginator.posts %}
-        {% include article-content.html %}
+        {% if post.draft == false %}
+          {% include article-content.html %}
+        {% endif %}
       {% endfor %}
     {% endif %}
   </div>
