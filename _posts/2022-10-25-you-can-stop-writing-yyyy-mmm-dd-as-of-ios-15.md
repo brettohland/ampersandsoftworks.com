@@ -3,8 +3,10 @@ layout: post
 title: You can stop writing date format strings like "yyyy-MMM-dd"
 description: Apple gives us a modern replacement for the magical format strings we pass to DateFormatters, let's talk about the Verbatim Format Style.
 tags: [ios, development, swift, formatstyle]
-date: 2022-10-24 06:21 -0600
+date: 2022-11-19 06:21 -0600
 ---
+
+<small>_Updated November 19th, 2022 to include clarity around setting the TimeZone and/or Calendar on the Verbatim Format Style._</small>
 
 I dislike time. 
 
@@ -235,7 +237,7 @@ let twosday = Calendar(identifier: .gregorian).date(from: twosdayDateComponents)
 let verbatimStyle = Date.VerbatimFormatStyle(
     format: "\(year: .defaultDigits)-\(month: .abbreviated)-\(day: .twoDigits)",
     timeZone: .autoupdatingCurrent,
-    calendar: .autoupdatingCurrent
+    calendar: Calendar(identifier: .gregorian)
 )
 
 twosday.formatted(verbatimStyle) // "2022-M02-22"???????
@@ -263,9 +265,9 @@ let twosday = Calendar(identifier: .gregorian).date(from: twosdayDateComponents)
 
 let verbatimStyle = Date.VerbatimFormatStyle(
     format: "\(year: .defaultDigits)-\(month: .abbreviated)-\(day: .twoDigits)",
-    locale: .autoupdatingCurrent,
+    locale: Locale(identifier: "en_US"),
     timeZone: .autoupdatingCurrent,
-    calendar: .autoupdatingCurrent
+    calendar: Calendar(identifier: .gregorian)
 )
 
 twosday.formatted(verbatimStyle) // "2022-Feb-22"
@@ -273,6 +275,45 @@ twosday.formatted(verbatimStyle) // "2022-Feb-22"
 {% endsplash %}
 
 Success.
+
+# An Aside About Calendars & Locales
+
+One thing that we need to remember as we're using this format style is that our choices for `TimeZone` and `Calendar` have interesting side-effects that may not be obvious to us. As a developer based in Canada, I rarely have to consider the effects that using the Buddhist or Hebrew calendars might do to my code.
+
+In the example above, you'll notice that I explicitly set the `Locale` to be US English (`Locale(identifier: "en_US")`) and the `Calendar` to be Gregorian (`Calendar(identifier: .gregorian)`). Since the general goals of this format style is to have a fixed date format string as the output, it makes a lot of sense to set these to guarantee the output.
+
+In cases where that need isn't so fixed (maybe just showing the user a specifically formatted string), then it might make sense to set the `Locale`, `TimeZone`, and `Calendar` to `.autoupdatingCurrent`. 
+
+I will warn you though, it seems that using `.autoupdatingCurrent` for the `Locale` will override any set `Calendar` parameter used to create the format style.
+
+{% splash %}
+
+// By using `.autoupdatingCurrent` for the `Locale`, the calendar parameter is ignored in the output string.
+Date.VerbatimFormatStyle(
+    format: "\(year: .defaultDigits)-\(month: .abbreviated)-\(day: .twoDigits)",
+    locale: .autoupdatingCurrent,
+    timeZone: .autoupdatingCurrent,
+    calendar: Calendar(identifier: .buddhist)
+).format(twosday) // "2022-Feb-22"
+
+// By setting an explicit Locale, the calendar parameter is used.
+Date.VerbatimFormatStyle(
+    format: "\(year: .defaultDigits)-\(month: .abbreviated)-\(day: .twoDigits)",
+    locale: Locale(identifier: "en_US"),
+    timeZone: .autoupdatingCurrent,
+    calendar: Calendar(identifier: .buddhist)
+).format(twosday) // "2065-Feb-22"
+
+// When omitting the locale, the calendar parameter is used.
+Date.VerbatimFormatStyle(
+    format: "\(year: .defaultDigits)-\(month: .abbreviated)-\(day: .twoDigits)",
+    timeZone: .autoupdatingCurrent,
+    calendar: Calendar(identifier: .buddhist)
+).format(twosday) // "2565-M02-22"
+
+{% endsplash %}
+
+Is this a bug? Possibly. (Feedback FB11806265 was submitted)
 
 # One Final Convenience
 
