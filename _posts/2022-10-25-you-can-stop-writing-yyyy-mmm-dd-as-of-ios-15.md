@@ -41,7 +41,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
 }
 {% endsplash %}
 
-We're now in a situation where the size of our table's data source can now cripple the performance of our application. You aren't going to notice an issue scrolling through a table of a few items (or probably a few dozen), but the minute you're scrolling through a list of Tweets in your Twitter client. You're going to start seeing a lot of memory usage.
+We're now in a situation where the size of our table's data source can now cripple the performance of our application. You aren't going to notice an issue scrolling through a table of a few items (or probably a few dozen), but the minute you're scrolling through a list of posts in your social network client. You're going to start seeing a lot of memory usage.
 
 The solve for this is to create your date formatter once in a shared location and to use that instance everywhere.
 

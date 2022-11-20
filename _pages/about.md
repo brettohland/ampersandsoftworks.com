@@ -13,7 +13,7 @@ Some small bits of information about me:
 - I [wrote ~~the~~ a book about Xcode](https://isbnsearch.org/isbn/9781785889011).
 - I like tabletop RPGs, building [mechanical keyboards](/tag/keyboards.html), [baking bread](https://kensartisan.com/flour-water-salt-yeast/), and generally [building things](/tag/diy.html).
 - In a previous life, [I made Flash websites](http://web.archive.org/web/20040602230813/http://www.insertcoinmedia.com/seven.html).
-- My [first app](https://github.com/brettohland/dbldbl) was named after a Tim Hortons beverage.
+- My [first app](https://github.com/brettohland/dbldbl) was named after a Tim Horton's beverage.
 - You can send me electronic mail here: [hello@ampersandsoftworks.com](mailto:hello@ampersandsoftworks.com)
 
 <p><script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Buy me a coffee', '#FF1A87', 'Q5Q6BLZHQ');kofiwidget2.draw();</script> </p>
@@ -23,6 +23,7 @@ Some small bits of information about me:
 ## Some links:
 - I've [LinkedIn](https://www.linkedin.com/in/brettohland/)
 - There's some stuff on [Github](https://github.com/brettohland)
+- You can find me on [Mastodon](https://mastodon.cloud/@bretto)
 - I used to use [Twitter](http://twitter.com/bretto) a lot, but now it bums me out
 
 ## This blog uses
