@@ -23,8 +23,8 @@ Some small bits of information about me:
 ## Some links:
 - I've [LinkedIn](https://www.linkedin.com/in/brettohland/)
 - There's some stuff on [Github](https://github.com/brettohland)
-- You can find me on [Mastodon](https://mastodon.cloud/@bretto)
-- I used to use [Twitter](http://twitter.com/bretto) a lot, but now it bums me out
+- You can find me on <a href="https://hachyderm.io/@bretto" rel="me">Mastodon</a>
+- I used to use [Twitter](http://twitter.com/bretto). 
 
 ## This blog uses
 

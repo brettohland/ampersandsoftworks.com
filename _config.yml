@@ -14,10 +14,10 @@ author:
   avatar: '/images/headshot.jpg'
 
 social:
-- {icon: "logo-mastodon", label: Mastodon, link: "https://mastodon.cloud/@bretto"}
-- {icon: "logo-twitter", label: Twitter, link: "https://twitter.com/bretto"}
+- {icon: "logo-mastodon", label: Mastodon, link: "https://hachyderm.io/@bretto"}
 - {icon: "logo-linkedin", label: LinkedIn, link: "https://www.linkedin.com/in/brettohland/"}
 - {icon: "logo-github", label: GitHub, link: "https://github.com/brettohland"}
+- {icon: "logo-twitter", label: Twitter, link: "https://twitter.com/bretto"}
 
 # Example of adding a new link to the author section and footer - {icon: "ion-logo-github", label: Github, link: "https://github.com"}
 # Other icons can be found at https://ionicons.com/v4/
