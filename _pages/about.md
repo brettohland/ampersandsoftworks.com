@@ -24,7 +24,6 @@ Some small bits of information about me:
 - I've [LinkedIn](https://www.linkedin.com/in/brettohland/)
 - There's some stuff on [Github](https://github.com/brettohland)
 - You can find me on <a href="https://hachyderm.io/@bretto" rel="me">Mastodon</a>
-- I used to use [Twitter](http://twitter.com/bretto). 
 
 ## This blog uses
 

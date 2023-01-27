@@ -147,3 +147,7 @@
     }
   }
 }
+
+.dark-mode .social__link img {
+  filter: invert(1);
+}
