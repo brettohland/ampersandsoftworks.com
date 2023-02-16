@@ -25,8 +25,7 @@
   <!-- Facebook OpenGraph -->
   <meta property="og:title" content="{% if page.url == "/" %}{{ site.title }} – {{ page.title }}{% else %}{{ page.title }} – {{ site.title }}{% endif %}" />
   <meta property="og:description" content="{% if page.url == "/" %}{{ site.description | strip_html | xml_escape }}{% elsif page.description %}{{ page.description | strip_html | xml_escape }}{% else %}{{ page.excerpt | strip_html | xml_escape }}{% endif %}" />
-  <meta property="og:image" content="{% if page.url == "/" %}{{ site.hero.hero__image | absolute_url }}{% else %}{{ page.image | absolute_url }}{% endif %}" />
-  <meta property="og:image" content="/images/og-header.png" />
+  <meta property="og:image" content="{{ "/images/og-header.png" | absolute_url }}" />
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,500;0,700;0,900;1,900&display=swap" rel="stylesheet">
