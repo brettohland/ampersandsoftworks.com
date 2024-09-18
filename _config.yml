@@ -33,12 +33,13 @@ hero:
 markdown: kramdown
 permalink: /:title
 plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll/tagging
-  - jekyll-themes-control
-  - jekyll-redirect-from
   - jekyll-feed
+  - jekyll-figure
+  - jekyll-paginate
+  - jekyll-redirect-from
+  - jekyll-sitemap
+  - jekyll-themes-control
+  - jekyll/tagging
 
 paginate: 5
 paginate_path: "/page/:num"
@@ -58,9 +59,9 @@ defaults:
 include: ['.htaccess', '_pages']
 
 # Tags
-tag_page_dir:         tag
-tag_page_layout:      tag_page
-tag_permalink_style:  /:title
+tag_page_dir: tag
+tag_page_layout: tag_page
+tag_permalink_style: /:title
 
 sass:
   sass_dir: _sass

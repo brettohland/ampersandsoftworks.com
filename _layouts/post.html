@@ -38,16 +38,6 @@ layout: default
     </div>
 
     <div class="post__bottom">
-      <div class="post__share">
-        <ul class="share__list list-reset">
-          <li class="share__item">
-            <a class="share__link share__twitter" href="https://twitter.com/intent/tweet?text={{ page.title | uri_escape }}&url={{ site.url }}{{ site.baseurl }}{{ page.url }}"
-              onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
-              title="Share on Twitter" rel="nofollow">Twitter</a>
-          </li>
-        </ul>
-      </div>
-
       {% if page.tags.size >= 1 %}
       <div class="post__tags">
         {% for tag in page.tags %}
